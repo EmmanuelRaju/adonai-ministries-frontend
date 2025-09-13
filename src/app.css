@@ -11,5 +11,5 @@
 }
 
 .nav-link {
-	@apply p-2 text-lg font-semibold whitespace-nowrap no-underline hover:bg-accent hover:text-accent-content;
+	@apply p-2 text-lg font-semibold whitespace-nowrap no-underline hover:bg-primary hover:text-primary-content;
 }

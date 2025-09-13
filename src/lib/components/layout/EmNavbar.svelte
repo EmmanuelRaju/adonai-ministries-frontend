@@ -8,8 +8,6 @@
 
 	let activeSubMenuId: string | null = $state(null);
 
-	$inspect('activeSubMenuId', activeSubMenuId);
-
 	let drawer: HTMLInputElement | null = $state(null);
 
 	let openDrawer = $state(false);
@@ -36,7 +34,7 @@
 		/>
 		<div class="drawer-content">
 			<!-- Page content here -->
-			<label for="my-drawer" class="drawer-button btn btn-ghost hover:btn-accent">
+			<label for="my-drawer" class="drawer-button btn btn-ghost hover:btn-primary">
 				<label class="swap swap-rotate">
 					<!-- this hidden checkbox controls the state -->
 					<input
@@ -73,7 +71,7 @@
 		</div>
 		<div class="drawer-side">
 			<label for="my-drawer" aria-label="close sidebar" class="drawer-overlay"></label>
-			<ul class="min-h-full w-80 divide-y-2 divide-accent bg-base-200 text-base-content">
+			<ul class="min-h-full w-80 divide-y-2 divide-primary bg-base-200 text-base-content">
 				<!-- Sidebar content here -->
 
 				{#each navLinks as navLink (navLink.id)}
@@ -92,7 +90,7 @@
 		{:else if params.children && params.children.length > 0}
 			<div class="group relative">
 				<p
-					class="p-2.5 text-lg font-semibold whitespace-nowrap group-hover:bg-accent group-hover:text-accent-content"
+					class="p-2.5 text-lg font-semibold whitespace-nowrap group-hover:bg-primary group-hover:text-primary-content"
 				>
 					{params.label}
 				</p>
@@ -122,7 +120,7 @@
 			<button
 				class="flex w-full justify-between p-2.5 text-left text-lg font-semibold whitespace-nowrap {activeSubMenuId ===
 				params.id
-					? 'bg-accent text-accent-content'
+					? 'bg-primary text-primary-content'
 					: ''}"
 				onclick={() => (activeSubMenuId = params.id)}
 			>
