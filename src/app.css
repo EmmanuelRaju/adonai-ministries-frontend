@@ -1,0 +1,15 @@
+@import 'tailwindcss';
+@plugin '@tailwindcss/typography';
+@plugin "daisyui" {
+	themes: all;
+}
+
+@custom-variant hover (&:hover);
+
+@theme {
+	--navbar-height: 94px;
+}
+
+.nav-link {
+	@apply p-2 text-lg font-semibold whitespace-nowrap no-underline hover:bg-accent hover:text-accent-content;
+}
