@@ -2,7 +2,6 @@
 	import type { TNavLink } from '$lib/models';
 	import logo from '$lib/assets/logo-cropped.png?enhanced';
 	import { slide } from 'svelte/transition';
-	import ThemeSwitcher from './ThemeSwitcher.svelte';
 
 	let { navLinks }: { navLinks: TNavLink[] } = $props();
 
@@ -80,7 +79,6 @@
 			</ul>
 		</div>
 	</div>
-	<ThemeSwitcher></ThemeSwitcher>
 </header>
 
 {#snippet desktopNavLink(params: TNavLink)}
@@ -90,12 +88,12 @@
 		{:else if params.children && params.children.length > 0}
 			<div class="group relative">
 				<p
-					class="p-2.5 text-lg font-semibold whitespace-nowrap group-hover:bg-primary group-hover:text-primary-content"
+					class="p-2 font-semibold whitespace-nowrap transition-colors group-hover:bg-primary group-hover:text-primary-content"
 				>
 					{params.label}
 				</p>
 				<ul
-					class="invisible absolute flex flex-col overflow-clip border border-base-100 bg-base-100 shadow-md group-hover:visible"
+					class="absolute z-[1] hidden flex-col overflow-clip border border-base-100 bg-base-100 shadow-md transition group-hover:flex"
 				>
 					{#each params.children as item}
 						<a href={item.href} class="nav-link">{item.label}</a>
@@ -118,7 +116,7 @@
 			>
 		{:else if params.children && params.children.length > 0}
 			<button
-				class="flex w-full justify-between p-2.5 text-left text-lg font-semibold whitespace-nowrap {activeSubMenuId ===
+				class="flex w-full justify-between p-2 text-left font-semibold whitespace-nowrap {activeSubMenuId ===
 				params.id
 					? 'bg-primary text-primary-content'
 					: ''}"
