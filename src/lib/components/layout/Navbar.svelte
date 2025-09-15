@@ -1,197 +1,147 @@
 <script lang="ts">
 	import type { TNavLink } from '$lib/models';
+	import logo from '$lib/assets/logo-cropped.png?enhanced';
+	import { slide } from 'svelte/transition';
+	import ThemeSwitcher from './ThemeSwitcher.svelte';
 
-	const links: TNavLink[] = [
-		{
-			id: 'home',
-			label: 'Home',
-			href: '/'
-		},
-		{
-			id: 'about',
-			label: 'About AMI',
-			children: [
-				{
-					id: 'selva-manuel',
-					label: 'Selva Manuel',
-					href: '/about/selva-manuel'
-				},
-				{
-					id: 'ministry',
-					label: 'The Ministry',
-					href: '/about/ministry'
-				},
-				{
-					id: 'faith-statement',
-					label: 'Statement Of Faith',
-					href: '/about/statement-of-faith'
-				}
-			]
-		},
-		{
-			id: 'christ',
-			label: 'The Christ',
-			children: [
-				{
-					id: 'miraculous-word',
-					label: 'Miraculous Word',
-					href: '/about/miraculous-word'
-				},
-				{
-					id: 'miraculous-salvation',
-					label: 'Miracle of Salvation',
-					href: '/about/miracle-of-salvation'
-				},
-				{
-					id: 'miraculous-healing',
-					label: 'Miracle of Healing',
-					href: '/about/miracule-of-healing'
-				}
-			]
-		},
-		{
-			id: 'events',
-			label: 'Events',
-			children: [
-				{
-					id: 'gathering',
-					label: `Adonai's gathering`,
-					href: '/events/adonai-gathering'
-				}
-			]
-		},
-		{
-			id: 'broadcast',
-			label: 'Broadcast',
-			children: [
-				{
-					id: 'adonai-voice',
-					label: `Adonai's voice`,
-					href: '/broadcast/adonai-voice'
-				},
-				{
-					id: 'broadcat-listing',
-					label: `Broadcast listing`,
-					href: '/broadcast/broadcast-listing'
-				}
-			]
-		},
-		{
-			id: 'prayer',
-			label: 'Prayer',
-			children: [
-				{
-					id: 'prayer-request',
-					label: 'Prayer requests',
-					href: '/prayer/prayer-requests'
-				},
-				{
-					id: 'praise-reports',
-					label: 'Praise reports',
-					href: '/prayer/prayer-requests'
-				}
-			]
-		},
-		{
-			id: 'giving',
-			label: 'Giving',
-			href: '/giving'
-		},
-		{
-			id: 'invitations',
-			label: 'Invitations',
-			href: '/invitations'
-		}
-	];
+	let { navLinks }: { navLinks: TNavLink[] } = $props();
+
+	let activeSubMenuId: string | null = $state(null);
+
+	let drawer: HTMLInputElement | null = $state(null);
+
+	let openDrawer = $state(false);
+	let showHamburgerIcon = $derived(openDrawer);
 </script>
 
-<div class="navbar bg-base-100 shadow-sm">
-	<div class="navbar-start">
-		<a href="/" class="btn text-xl btn-ghost">AMI</a>
-	</div>
-	<div class="navbar-center hidden lg:flex">
-		<ul class="menu menu-horizontal gap-5 px-1">
-			{#each links as link (link.id)}
-				{@render desktopNavLink(link)}
-			{/each}
-		</ul>
-	</div>
-	<div class="navbar-end">
-		<div class="dropdown dropdown-end">
-			<div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
-				<svg
-					xmlns="http://www.w3.org/2000/svg"
-					fill="none"
-					viewBox="0 0 24 24"
-					class="inline-block h-5 w-5 stroke-current"
-				>
-					<path
-						stroke-linecap="round"
-						stroke-linejoin="round"
-						stroke-width="2"
-						d="M4 6h16M4 12h16M4 18h16"
-					></path>
-				</svg>
-			</div>
-			<ul
-				class="dropdown-content menu z-1 mt-3 w-52 max-w-[75vw] menu-md rounded-box bg-base-100 p-2 shadow"
-			>
-				{#each links as link (link.id)}
-					{@render mobileNavLink2(link)}
+<header class="flex w-full items-center p-2.5 shadow-sm">
+	<a href="/" aria-label="AMI" class="w-14 lg:w-20">
+		<enhanced:img src={logo} alt="AMI" class="h-full w-full object-contain"></enhanced:img>
+	</a>
+	<ul class="mx-auto hidden items-center gap-5 lg:flex">
+		{#each navLinks as navLink (navLink.id)}
+			{@render desktopNavLink(navLink)}
+		{/each}
+	</ul>
+
+	<div class="drawer justify-end lg:hidden">
+		<input
+			bind:this={drawer}
+			id="my-drawer"
+			type="checkbox"
+			class="drawer-toggle"
+			bind:checked={openDrawer}
+		/>
+		<div class="drawer-content">
+			<!-- Page content here -->
+			<label for="my-drawer" class="drawer-button btn btn-ghost hover:btn-primary">
+				<label class="swap swap-rotate">
+					<!-- this hidden checkbox controls the state -->
+					<input
+						type="checkbox"
+						onchange={() => (openDrawer = !openDrawer)}
+						bind:checked={showHamburgerIcon}
+					/>
+
+					<!-- hamburger icon -->
+					<svg
+						class="swap-off fill-current"
+						xmlns="http://www.w3.org/2000/svg"
+						width="32"
+						height="32"
+						viewBox="0 0 512 512"
+					>
+						<path d="M64,384H448V341.33H64Zm0-106.67H448V234.67H64ZM64,128v42.67H448V128Z" />
+					</svg>
+
+					<!-- close icon -->
+					<svg
+						class="swap-on fill-current"
+						xmlns="http://www.w3.org/2000/svg"
+						width="32"
+						height="32"
+						viewBox="0 0 512 512"
+					>
+						<polygon
+							points="400 145.49 366.51 112 256 222.51 145.49 112 112 145.49 222.51 256 112 366.51 145.49 400 256 289.49 366.51 400 400 366.51 289.49 256 400 145.49"
+						/>
+					</svg>
+				</label>
+			</label>
+		</div>
+		<div class="drawer-side">
+			<label for="my-drawer" aria-label="close sidebar" class="drawer-overlay"></label>
+			<ul class="min-h-full w-80 divide-y-2 divide-primary bg-base-200 text-base-content">
+				<!-- Sidebar content here -->
+
+				{#each navLinks as navLink (navLink.id)}
+					{@render mobileNavLink(navLink)}
 				{/each}
 			</ul>
 		</div>
 	</div>
-</div>
-
-{#snippet mobileNavLink(params: TNavLink)}
-	<li>
-		{#if params.href}
-			<a href={params.href}>{params.label}</a>
-		{:else}
-			<p>{params.label}</p>
-		{/if}
-		{#if params.children && params.children.length > 0}
-			<ul>
-				{#each params.children as item}
-					{@render mobileNavLink(item)}
-				{/each}
-			</ul>
-		{/if}
-	</li>
-{/snippet}
-{#snippet mobileNavLink2(params: TNavLink)}
-	<li>
-		{#if params.href}
-			<a href={params.href}>{params.label}</a>
-		{:else if params.children && params.children.length > 0}
-			<div class="collapse-arrow collapse">
-				<input type="radio" name="navlink-item" />
-				<p class="collapse-title p-0">{params.label}</p>
-				<div class="collapse-content p-0">
-					{#each params.children as item}
-						{@render mobileNavLink2(item)}
-					{/each}
-				</div>
-			</div>
-		{/if}
-	</li>
-{/snippet}
+	<ThemeSwitcher></ThemeSwitcher>
+</header>
 
 {#snippet desktopNavLink(params: TNavLink)}
-	<li>
+	<li class:hidden={params.hide?.lg}>
 		{#if params.href}
-			<a href={params.href}>{params.label}</a>
+			<a href={params.href} class="nav-link">{params.label}</a>
 		{:else if params.children && params.children.length > 0}
-			<div class="dropdown-hover dropdown dropdown-center">
-				<div tabindex="0" role="button" class="">{params.label}</div>
-				<!-- svelte-ignore a11y_no_noninteractive_tabindex -->
-				<ul tabindex="0" class="dropdown-content menu z-1 w-52 rounded-box bg-base-200 shadow-sm">
+			<div class="group relative">
+				<p
+					class="p-2.5 text-lg font-semibold whitespace-nowrap group-hover:bg-primary group-hover:text-primary-content"
+				>
+					{params.label}
+				</p>
+				<ul
+					class="invisible absolute flex flex-col overflow-clip border border-base-100 bg-base-100 shadow-md group-hover:visible"
+				>
 					{#each params.children as item}
-						{@render desktopNavLink(item)}
+						<a href={item.href} class="nav-link">{item.label}</a>
 					{/each}
 				</ul>
 			</div>
+		{/if}
+	</li>
+{/snippet}
+
+{#snippet mobileNavLink(params: TNavLink)}
+	<li class:hidden={params.hide?.sm}>
+		{#if params.href}
+			<a
+				href={params.href}
+				class="nav-link block"
+				onclick={() => {
+					if (drawer) drawer.checked = false;
+				}}>{params.label}</a
+			>
+		{:else if params.children && params.children.length > 0}
+			<button
+				class="flex w-full justify-between p-2.5 text-left text-lg font-semibold whitespace-nowrap {activeSubMenuId ===
+				params.id
+					? 'bg-primary text-primary-content'
+					: ''}"
+				onclick={() => (activeSubMenuId = params.id)}
+			>
+				<p>{params.label}</p>
+				<p>{activeSubMenuId === params.id ? '–' : '+'}</p>
+			</button>
+			{#if activeSubMenuId === params.id}
+				<ul class="flex flex-col overflow-clip" transition:slide>
+					{#each params.children as item}
+						<a
+							href={item.href}
+							class="nav-link block"
+							onclick={() => {
+								if (drawer) drawer.checked = false;
+							}}
+						>
+							<span class="ml-4">{item.label}</span>
+						</a>
+					{/each}
+				</ul>
+			{/if}
 		{/if}
 	</li>
 {/snippet}
