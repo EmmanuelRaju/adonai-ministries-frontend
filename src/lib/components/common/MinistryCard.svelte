@@ -6,7 +6,7 @@
 	}: { name: string; description: string; link?: string | null } = $props();
 </script>
 
-<div class="card bg-base-100 shadow-md transition hover:shadow-lg">
+<div class="card-border card shadow-lg transition hover:shadow-xl">
 	<div class="card-body">
 		<h3 class="card-title">{name}</h3>
 		<p>{description}</p>

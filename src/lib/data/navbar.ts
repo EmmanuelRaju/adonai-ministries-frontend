@@ -16,11 +16,6 @@ export const navlinks: TNavLink[] = [
 				href: '/about/selva-manuel'
 			},
 			{
-				id: 'ministry',
-				label: 'The Ministry',
-				href: '/about/ministry'
-			},
-			{
 				id: 'faith-statement',
 				label: 'Statement Of Faith',
 				href: '/about/statement-of-faith'

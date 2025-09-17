@@ -11,7 +11,7 @@
 		}
 	};
 
-	let selectedTheme = $state('light');
+	let selectedTheme = $state('adonai');
 	let selectedHeadingFont = $state(`'Playfair Display', serif`);
 	let selectedBodyFont = $state(`'Inter', san-serif`);
 

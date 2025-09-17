@@ -1,20 +1,11 @@
 <script lang="ts">
-	let {
-		title = 'Welcome to Adonai Ministries',
-		subtitle = 'Experience God’s love. Join us this Sunday.'
-	} = $props();
+	import bible from '$lib/assets/images/bible.jpg';
+	let { title = 'Adonai Ministries International', img = bible } = $props();
 </script>
 
-<section class="relative hero min-h-[70vh] bg-base-200">
+<section style="background-image: url({img});" class="relative hero min-h-[70vh] bg-base-200">
 	<div class="bg-opacity-30 hero-overlay"></div>
 	<div class="hero-content text-center">
-		<div class="max-w-md">
-			<h1 class="mb-4 text-4xl font-bold">{title}</h1>
-			<p class="mb-6">{subtitle}</p>
-			<div class="flex flex-wrap justify-center gap-4">
-				<a class="btn btn-primary">Visit Us</a>
-				<a class="btn btn-outline">Watch Online</a>
-			</div>
-		</div>
+		<h1 class="container-width text-5xl font-bold text-white xl:text-7xl">{title}</h1>
 	</div>
 </section>

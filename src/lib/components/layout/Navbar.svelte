@@ -13,15 +13,15 @@
 	let showHamburgerIcon = $derived(openDrawer);
 </script>
 
-<header class="flex w-full items-center p-2.5 shadow-sm">
-	<a href="/" aria-label="AMI" class="w-14 lg:w-20">
+<header class="relative flex w-full items-center bg-base-100 px-2.5 shadow-sm">
+	<a href="/" aria-label="AMI" class="absolute w-14 lg:w-20">
 		<enhanced:img src={logo} alt="AMI" class="h-full w-full object-contain"></enhanced:img>
 	</a>
-	<ul class="mx-auto hidden items-center gap-5 lg:flex">
+	<div class="container-width mx-auto hidden w-full items-center lg:flex">
 		{#each navLinks as navLink (navLink.id)}
 			{@render desktopNavLink(navLink)}
 		{/each}
-	</ul>
+	</div>
 
 	<div class="drawer justify-end lg:hidden">
 		<input
@@ -33,7 +33,7 @@
 		/>
 		<div class="drawer-content">
 			<!-- Page content here -->
-			<label for="my-drawer" class="drawer-button btn btn-ghost hover:btn-primary">
+			<label for="my-drawer" class="drawer-button btn p-0 btn-ghost hover:btn-primary">
 				<label class="swap swap-rotate">
 					<!-- this hidden checkbox controls the state -->
 					<input
@@ -82,13 +82,13 @@
 </header>
 
 {#snippet desktopNavLink(params: TNavLink)}
-	<li class:hidden={params.hide?.lg}>
+	<div class:hidden={params.hide?.lg} class="h-[92px] flex-1">
 		{#if params.href}
-			<a href={params.href} class="nav-link">{params.label}</a>
+			<a href={params.href} class="nav-link w-full p-3 text-center">{params.label}</a>
 		{:else if params.children && params.children.length > 0}
-			<div class="group relative">
+			<div class="group relative h-full">
 				<p
-					class="p-2 font-semibold whitespace-nowrap transition-colors group-hover:bg-primary group-hover:text-primary-content"
+					class="h-full place-content-center p-3 text-center font-semibold whitespace-nowrap transition-colors group-hover:bg-primary group-hover:text-primary-content"
 				>
 					{params.label}
 				</p>
@@ -101,7 +101,7 @@
 				</ul>
 			</div>
 		{/if}
-	</li>
+	</div>
 {/snippet}
 
 {#snippet mobileNavLink(params: TNavLink)}
