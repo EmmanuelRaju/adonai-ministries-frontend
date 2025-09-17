@@ -95,4 +95,17 @@
 	.container-width {
 		@apply max-w-4xl xl:max-w-5xl;
 	}
+
+	/* Optional smooth card appearance */
+	.card-container {
+		opacity: 0;
+		transform: translateY(20px);
+		transition:
+			opacity 0.4s ease,
+			transform 0.4s ease;
+	}
+	.card-container.visible {
+		opacity: 1;
+		transform: translateY(0);
+	}
 }

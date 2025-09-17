@@ -29,17 +29,17 @@ export const navlinks: TNavLink[] = [
 			{
 				id: 'miraculous-word',
 				label: 'Miraculous Word',
-				href: '/about/miraculous-word'
+				href: '/the-christ/miraculous-word'
 			},
 			{
 				id: 'miraculous-salvation',
 				label: 'Miracle of Salvation',
-				href: '/about/miracle-of-salvation'
+				href: '/the-christ/miracle-of-salvation'
 			},
 			{
 				id: 'miraculous-healing',
 				label: 'Miracle of Healing',
-				href: '/about/miracule-of-healing'
+				href: '/the-christ/miracule-of-healing'
 			}
 		]
 	},
