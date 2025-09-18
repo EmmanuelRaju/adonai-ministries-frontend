@@ -79,9 +79,14 @@ export const navlinks: TNavLink[] = [
 				href: '/prayer/prayer-requests'
 			},
 			{
+				id: 'share-praise-reports',
+				label: 'Share praise report',
+				href: '/prayer/praise-reports/submit'
+			},
+			{
 				id: 'praise-reports',
 				label: 'Praise reports',
-				href: '/prayer/prayer-requests'
+				href: '/prayer/praise-reports'
 			}
 		]
 	},
@@ -94,6 +99,11 @@ export const navlinks: TNavLink[] = [
 		id: 'invitations',
 		label: 'Invitations',
 		href: '/invitations'
+	},
+	{
+		id: 'contact-us',
+		label: 'Contact Us',
+		href: '/contact-us'
 	},
 	{
 		id: 'terms',

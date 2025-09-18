@@ -10,4 +10,5 @@ export { default as StackedCards } from './common/StackedCards.svelte';
 //Layout components
 export { default as Footer } from './layout/Footer.svelte';
 export { default as Navbar } from './layout/Navbar.svelte';
+export { default as ScrollToTop } from './layout/ScrollToTop.svelte';
 export { default as ThemeSetter } from './layout/ThemeSetter.svelte';

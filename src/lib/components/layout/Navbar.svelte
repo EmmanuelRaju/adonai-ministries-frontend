@@ -2,6 +2,7 @@
 	import type { TNavLink } from '$lib/models';
 	import logo from '$lib/assets/logo-cropped.png?enhanced';
 	import { slide } from 'svelte/transition';
+	import { Minus, Plus } from '@lucide/svelte';
 
 	let { navLinks }: { navLinks: TNavLink[] } = $props();
 
@@ -70,7 +71,7 @@
 		</div>
 		<div class="drawer-side">
 			<label for="my-drawer" aria-label="close sidebar" class="drawer-overlay"></label>
-			<ul class="min-h-full w-80 divide-y-2 divide-primary bg-base-200 text-base-content">
+			<ul class="min-h-full w-80 divide-y divide-primary bg-base-200 text-base-content">
 				<!-- Sidebar content here -->
 
 				{#each navLinks as navLink (navLink.id)}
@@ -109,9 +110,12 @@
 		{#if params.href}
 			<a
 				href={params.href}
-				class="nav-link block"
+				class="nav-link block w-full"
 				onclick={() => {
-					if (drawer) drawer.checked = false;
+					if (drawer) {
+						drawer.checked = false;
+						openDrawer = false;
+					}
 				}}>{params.label}</a
 			>
 		{:else if params.children && params.children.length > 0}
@@ -123,7 +127,11 @@
 				onclick={() => (activeSubMenuId = params.id)}
 			>
 				<p>{params.label}</p>
-				<p>{activeSubMenuId === params.id ? '–' : '+'}</p>
+				{#if activeSubMenuId !== params.id}
+					<Plus></Plus>
+				{:else}
+					<Minus></Minus>
+				{/if}
 			</button>
 			{#if activeSubMenuId === params.id}
 				<ul class="flex flex-col overflow-clip" transition:slide>
@@ -132,7 +140,10 @@
 							href={item.href}
 							class="nav-link block"
 							onclick={() => {
-								if (drawer) drawer.checked = false;
+								if (drawer) {
+									drawer.checked = false;
+									openDrawer = false;
+								}
 							}}
 						>
 							<span class="ml-4">{item.label}</span>

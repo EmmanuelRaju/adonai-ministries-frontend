@@ -3,6 +3,7 @@
 	import favicon from '$lib/assets/favicon.svg?enhanced';
 	import { navlinks } from '$lib/data/navbar';
 	import { Navbar, Footer, ThemeSetter } from '$lib/components';
+	import ScrollToTop from '$lib/components/layout/ScrollToTop.svelte';
 
 	let { children } = $props();
 </script>
@@ -16,5 +17,7 @@
 	{@render children?.()}
 </main>
 <Footer></Footer>
+
+<ScrollToTop></ScrollToTop>
 
 <ThemeSetter></ThemeSetter>
