@@ -27,6 +27,11 @@ export const navlinks: TNavLink[] = [
 		label: 'The Christ',
 		children: [
 			{
+				id: 'who-is-jesus',
+				label: 'Who is Jesus Christ',
+				href: '/the-christ/who-is-jesus'
+			},
+			{
 				id: 'miraculous-word',
 				label: 'Miraculous Word',
 				href: '/the-christ/miraculous-word'
@@ -39,37 +44,31 @@ export const navlinks: TNavLink[] = [
 			{
 				id: 'miraculous-healing',
 				label: 'Miracle of Healing',
-				href: '/the-christ/miracule-of-healing'
+				href: '/the-christ/miracle-of-healing'
 			}
 		]
 	},
 	{
 		id: 'events',
 		label: 'Events',
-		children: [
-			{
-				id: 'gathering',
-				label: `Adonai's gathering`,
-				href: '/events/adonai-gathering'
-			}
-		]
+		href: '/events'
 	},
-	{
-		id: 'broadcast',
-		label: 'Broadcast',
-		children: [
-			{
-				id: 'adonai-voice',
-				label: `Adonai's voice`,
-				href: '/broadcast/adonai-voice'
-			},
-			{
-				id: 'broadcat-listing',
-				label: `Broadcast listing`,
-				href: '/broadcast/broadcast-listing'
-			}
-		]
-	},
+	// {
+	// 	id: 'broadcast',
+	// 	label: 'Broadcast',
+	// 	children: [
+	// 		{
+	// 			id: 'adonai-voice',
+	// 			label: `Adonai's voice`,
+	// 			href: '/broadcast/adonai-voice'
+	// 		},
+	// 		{
+	// 			id: 'broadcat-listing',
+	// 			label: `Broadcast listing`,
+	// 			href: '/broadcast/broadcast-listing'
+	// 		}
+	// 	]
+	// },
 	{
 		id: 'prayer',
 		label: 'Prayer',

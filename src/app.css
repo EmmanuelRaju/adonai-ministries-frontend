@@ -108,4 +108,24 @@
 		opacity: 1;
 		transform: translateY(0);
 	}
+
+	.custom-ol {
+		counter-reset: statement;
+		list-style: none;
+	}
+
+	.custom-ol li {
+		counter-increment: statement;
+	}
+
+	.custom-ol li::before {
+		content: counter(statement, decimal-leading-zero);
+		position: absolute;
+		left: -2.5rem;
+		top: 0;
+		font-size: 2.5rem;
+		font-weight: bold;
+		line-height: 1;
+		opacity: 0.5;
+	}
 }

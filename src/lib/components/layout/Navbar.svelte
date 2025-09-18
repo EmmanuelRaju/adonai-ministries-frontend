@@ -13,7 +13,7 @@
 	let showHamburgerIcon = $derived(openDrawer);
 </script>
 
-<header class="relative flex w-full items-center bg-base-100 px-2.5 shadow-sm">
+<header class="relative flex min-h-[60px] w-full items-center bg-base-100 px-2.5 shadow-sm">
 	<a href="/" aria-label="AMI" class="absolute w-14 lg:w-20">
 		<enhanced:img src={logo} alt="AMI" class="h-full w-full object-contain"></enhanced:img>
 	</a>
