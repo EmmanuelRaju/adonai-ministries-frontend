@@ -1,5 +1,5 @@
 <script>
-	import { Hero } from '$lib/components';
+	import { Hero, StackedCards } from '$lib/components';
 </script>
 
 <Hero title="A servant of the most high" />
@@ -52,12 +52,14 @@
 			Word and read -
 		</p>
 
-		<blockquote class="text-secondary">
-			I, ADONAI, have called you in righteousness; I will take hold of your hand. I will keep you
-			and will make you to be a covenant for the people and a light for the Gentiles, to open eyes
-			that are blind, to free captives from prison and to release from the dungeon those who sit in
-			darkness. – (Isaiah 42:6,7 AMP)
-		</blockquote>
+		<StackedCards
+			data={[
+				{
+					text: 'I, ADONAI, have called you in righteousness; I will take hold of your hand. I will keep you and will make you to be a covenant for the people and a light for the Gentiles, to open eyes that are blind, to free captives from prison and to release from the dungeon those who sit in darkness.',
+					subtext: 'Isaiah 42:6,7 (AMP)'
+				}
+			]}
+		></StackedCards>
 
 		<p>
 			He surrendered his life unto the Lord with this prayer <br /><br />

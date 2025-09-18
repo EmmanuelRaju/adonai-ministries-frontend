@@ -14,8 +14,8 @@
 3. Cormorant Garamond + Lato (Refined & Contemporary)
 4. Montserrat + Merriweather (Modern with Depth) */
 @theme {
-	--font-heading: 'Libre Baskerville', serif;
-	--font-body: 'Nunito', sans-serif;
+	--font-heading: 'Montserrat', san-serif;
+	--font-body: 'Inter', san-serif;
 
 	/* Global font sizes and weights */
 	--font-size-h1: 2.5rem; /* 40px */

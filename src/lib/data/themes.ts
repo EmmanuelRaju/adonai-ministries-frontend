@@ -1,7 +1,7 @@
 export const themes = [
 	'adonai',
 	'light',
-	'dark',
+	// 'dark',
 	'cupcake',
 	'bumblebee',
 	'emerald',

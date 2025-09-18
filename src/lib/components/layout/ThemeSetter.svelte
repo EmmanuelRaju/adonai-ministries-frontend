@@ -12,17 +12,35 @@
 	};
 
 	let selectedTheme = $state('adonai');
-	let selectedHeadingFont = $state(`'Playfair Display', serif`);
+	let selectedHeadingFont = $state(`'Montserrat', san-serif`);
 	let selectedBodyFont = $state(`'Inter', san-serif`);
 
 	$effect(() => {
+		const _selectedTheme = localStorage.getItem('data-theme');
+		const _selectedHeadingFont = localStorage.getItem('--font-heading');
+		const _selectedBodyFont = localStorage.getItem('--font-body');
+
+		if (_selectedTheme) {
+			selectedTheme = _selectedTheme;
+		}
+		if (_selectedHeadingFont) {
+			selectedHeadingFont = _selectedHeadingFont;
+		}
+		if (_selectedBodyFont) {
+			selectedBodyFont = _selectedBodyFont;
+		}
+	});
+	$effect(() => {
 		document.documentElement.setAttribute('data-theme', selectedTheme);
+		localStorage.setItem('data-theme', selectedTheme);
 	});
 	$effect(() => {
 		document.documentElement.style.setProperty('--font-heading', selectedHeadingFont);
+		localStorage.setItem('--font-heading', selectedHeadingFont);
 	});
 	$effect(() => {
 		document.documentElement.style.setProperty('--font-body', selectedBodyFont);
+		localStorage.setItem('--font-body', selectedBodyFont);
 	});
 </script>
 

@@ -32,18 +32,9 @@
 			class="card-container relative"
 			in:fly={{ y: 20, duration: 400, delay: i * 120 }}
 		>
-			<!-- <div
-				class="card rounded-xl border border-base-100 bg-secondary shadow-lg transition-transform hover:scale-[1.02]"
-			>
-				<div class="card-body flex flex-col gap-2 text-secondary-content">
-					<p class="text-xl">"{item.text}"</p>
-					<p class="text-right">{item.subtext}</p>
-				</div>
-			</div> -->
-			<div class="card bg-base-200 shadow-sm">
+			<div class="card bg-base-100 shadow-sm">
 				<span
-					style="color: transparent; -webkit-text-stroke: 1px var(--color-secondary);"
-					class="absolute right-6 bottom-2 text-center text-2xl text-nowrap uppercase opacity-70"
+					class="absolute right-6 bottom-2 text-center font-heading text-2xl text-nowrap text-secondary uppercase"
 				>
 					{item.subtext}
 				</span>

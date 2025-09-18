@@ -22,7 +22,7 @@
 {#if $showScrollToTop}
 	<button
 		type="button"
-		class="btn fixed right-5 bottom-16 btn-circle btn-primary md:right-[30px]"
+		class="btn fixed right-5 bottom-16 btn-circle btn-primary"
 		onclick={scrollToTop}
 		aria-label="Scroll to top"
 	>

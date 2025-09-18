@@ -1,5 +1,5 @@
 <script>
-	import { Hero } from '$lib/components';
+	import { Hero, StackedCards } from '$lib/components';
 </script>
 
 <Hero />
@@ -25,11 +25,14 @@
 		The deepest desire of our hearts is for the glorious Gospel be preached to people of different
 		nations and tongues and the people to experience our Lord as their Lord.
 	</p>
-	<blockquote class="text-secondary">
-		Our confidence and steadfast reliance and absolute trust that we have, is through Christ toward
-		God. Not that we are sufficiently qualified in ourselves to claim anything as coming from us,
-		but our sufficiency and qualifications come from God – (2 Coranthians 3:4,5 AMP)
-	</blockquote>
+	<StackedCards
+		data={[
+			{
+				text: 'Our confidence and steadfast reliance and absolute trust that we have, is through Christ toward God. Not that we are sufficiently qualified in ourselves to claim anything as coming from us, but our sufficiency and qualifications come from God',
+				subtext: '2 Coranthians 3:4,5 (AMP)'
+			}
+		]}
+	></StackedCards>
 	<p>
 		Lord has commissioned each one of us to feed the hungry, clothe the naked, and take care of the
 		widows. What a great privilege it is for you and me to be called as <strong class="uppercase"
