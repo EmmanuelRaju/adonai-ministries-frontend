@@ -1,5 +1,7 @@
-<footer class="footer-center footer footer-horizontal bg-primary p-10 text-primary-content">
-	<nav class="grid grid-flow-col gap-4">
+<footer
+	class="footer-center mt-5 footer footer-horizontal bg-primary px-5 py-10 text-primary-content"
+>
+	<nav class="flex gap-4">
 		<a href="/terms-of-use" class="link text-base link-hover md:text-lg">Terms of use</a>
 		<a href="/privacy-policy" class="link text-base link-hover md:text-lg">Privacy policy</a>
 		<a href="/contact-us" class="link text-base link-hover md:text-lg">Contact us</a>
@@ -47,9 +49,11 @@
 			</a>
 		</div>
 	</nav>
-	<aside>
-		<p class="font-bold">Adonai's Ministries International</p>
-		<p>Copyright © {new Date().getFullYear()} - All right reserved</p>
-		<p>'Adonai's Ministries International' is a qualified IRS Section 501(c)(3) Organization</p>
+	<aside class="">
+		<p class="text-xs font-bold">Adonai's Ministries International</p>
+		<p class="text-xs">Copyright © {new Date().getFullYear()} - All right reserved</p>
+		<p class="text-xs">
+			'Adonai's Ministries International' is a qualified IRS Section 501(c)(3) Organization
+		</p>
 	</aside>
 </footer>

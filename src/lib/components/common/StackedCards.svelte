@@ -25,14 +25,16 @@
 	}
 </script>
 
-<section class="flex flex-col gap-5 lg:gap-10">
+<section class="flex flex-col gap-5 md:gap-0">
 	{#each data as item, i}
 		<div
 			use:revealOnScroll
 			class="card-container relative"
 			in:fly={{ y: 20, duration: 400, delay: i * 120 }}
 		>
-			<div class="card bg-base-100 shadow-sm">
+			<div
+				class="card bg-base-100 shadow-md transition duration-200 hover:scale-100 hover:shadow-2xl md:scale-80"
+			>
 				<span
 					class="absolute right-6 bottom-2 text-center font-heading text-2xl text-nowrap text-secondary uppercase"
 				>

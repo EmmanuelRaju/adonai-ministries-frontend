@@ -15,7 +15,7 @@
 </script>
 
 <header class="relative flex min-h-[60px] w-full items-center bg-base-100 px-2.5 shadow-sm">
-	<a href="/" aria-label="AMI" class="absolute w-14 lg:w-20">
+	<a href="/" aria-label="AMI" class="absolute z-[1] w-14 lg:w-20">
 		<enhanced:img src={logo} alt="AMI" class="h-full w-full object-contain"></enhanced:img>
 	</a>
 	<div class="container-width mx-auto hidden w-full items-center lg:flex">

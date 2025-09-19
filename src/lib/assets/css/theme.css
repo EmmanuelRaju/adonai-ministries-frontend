@@ -14,9 +14,13 @@
 	--color-base-300: oklch(91.586% 0.006 53.44);
 	--color-base-content: oklch(23.574% 0.066 313.189);
 
+	/* Primary – warm red */
+	--color-primary: oklch(69.98% 0.186 26.75);
+	--color-primary-content: oklch(98% 0.001 26.75);
+
 	/* Primary – Deep Blue */
-	--color-primary: oklch(50% 0.28 265);
-	--color-primary-content: oklch(98% 0.01 265);
+	/* --color-primary: oklch(50% 0.28 265);
+	--color-primary-content: oklch(98% 0.01 265); */
 
 	/* ✅ Secondary – Soft Lavender */
 	--color-secondary: oklch(78% 0.15 280);

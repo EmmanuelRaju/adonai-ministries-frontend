@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Hero, StackedCards } from '$lib/components';
+	import { Hero, Blockquote } from '$lib/components';
 
 	const verses = [
 		{
@@ -193,6 +193,10 @@
 		following verses increase your faith and cause you to believe for the impossible to become
 		possible and the incurable to become curable.
 	</p>
-	<StackedCards data={verses.map((it) => ({ text: it.verse, subtext: it.reference }))}
-	></StackedCards>
+	<div class="flex flex-col gap-5">
+		{#each verses as it, i}
+			<Blockquote quote={it.verse} cite={it.reference} dir={i % 2 == 0 ? 'left' : 'right'}
+			></Blockquote>
+		{/each}
+	</div>
 </section>

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Hero, StackedCards } from '$lib/components';
+	import { Blockquote, Hero } from '$lib/components';
 
 	const verses = [
 		{
@@ -100,10 +100,17 @@
 		our Souls, Healing of our Body and Mind, Deliverance from the oppression of the devil and
 		Sanctification of our Saved being.
 	</p>
-	<StackedCards data={verses.map((it) => ({ text: it.verse, subtext: it.reference }))}
-	></StackedCards>
+	<div class="flex flex-col gap-5">
+		{#each verses as it, i}
+			<Blockquote quote={it.verse} cite={it.reference} dir={i % 2 == 0 ? 'left' : 'right'}
+			></Blockquote>
+		{/each}
+	</div>
 	<h2>How can I receive my miracle?</h2>
-	<StackedCards
-		data={miracleReceptionVerses.map((it) => ({ text: it.verse, subtext: it.reference }))}
-	></StackedCards>
+	<div class="flex flex-col gap-5">
+		{#each miracleReceptionVerses as it, i}
+			<Blockquote quote={it.verse} cite={it.reference} dir={i % 2 == 0 ? 'left' : 'right'}
+			></Blockquote>
+		{/each}
+	</div>
 </section>
