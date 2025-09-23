@@ -1,5 +1,6 @@
 <script>
 	import { Hero } from '$lib/components';
+	import { praiseReportFormFields } from './data';
 </script>
 
 <Hero title="Praise reports" />
@@ -27,4 +28,22 @@
 		has promised, He will also accomplish (Rom 4:21). Let not your heart be troubled neither let it
 		be afraid (John 14:27). Believe in God and also in Christ Jesus (John 14:1). God Bless you.
 	</p>
+
+	<section class="mt-8">
+		<h2 class="text-center">Share Your Testimony</h2>
+		<form class="mx-auto flex flex-col gap-3 md:w-80">
+			{#each praiseReportFormFields as field}
+				<field.component
+					type={field.type}
+					label={field.label}
+					class="validator input input-md"
+					placeholder={field.placeholder}
+					validatorHint={field.validatorHint}
+					options={field.options ?? []}
+					{...field.props}
+				></field.component>
+			{/each}
+			<button class="btn mt-2" type="submit">Submit testimony</button>
+		</form>
+	</section>
 </section>

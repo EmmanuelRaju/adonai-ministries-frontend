@@ -1,5 +1,6 @@
 <script>
 	import { Hero } from '$lib/components';
+	import { prayerRequestFormFields } from './data';
 </script>
 
 <Hero title="Prayer requests" />
@@ -31,4 +32,21 @@
 		Lord He heals us; When we come back to our Lord with thanksgiving, He makes us whole. Our Lord
 		always loves people who are thankful to Him .
 	</p>
+	<section>
+		<h2 class="text-center">Please let us know how we can pray for you. God Bless you.</h2>
+		<form class="mx-auto flex flex-col gap-3 md:w-80">
+			{#each prayerRequestFormFields as field}
+				<field.component
+					type={field.type}
+					label={field.label}
+					class="validator input input-md"
+					placeholder={field.placeholder}
+					validatorHint={field.validatorHint}
+					options={field.options ?? []}
+					{...field.props}
+				></field.component>
+			{/each}
+			<button class="btn mt-2" type="submit">Submit request</button>
+		</form>
+	</section>
 </section>

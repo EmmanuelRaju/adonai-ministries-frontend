@@ -1,5 +1,6 @@
 <script>
 	import { Hero } from '$lib/components';
+	import { submitPraiseReportFields } from './data';
 </script>
 
 <Hero title="Share praise report" />
@@ -17,4 +18,21 @@
 		Word of our Testimony”. Your Testimony is a seed for more miracles. Thank you for helping us let
 		others know what God is doing, for His Glory. God Bless You.
 	</p>
+	<section>
+		<h2 class="text-center">Please fill out the following and let us know what God has done</h2>
+		<form class="mx-auto flex flex-col gap-3 md:w-80">
+			{#each submitPraiseReportFields as field}
+				<field.component
+					type={field.type}
+					label={field.label}
+					class="validator {field.props.class}"
+					placeholder={field.placeholder}
+					validatorHint={field.validatorHint}
+					options={field.options ?? []}
+					{...field.props}
+				></field.component>
+			{/each}
+			<button class="btn mt-2" type="submit">Submit request</button>
+		</form>
+	</section>
 </section>

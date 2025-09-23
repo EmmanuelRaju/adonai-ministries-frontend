@@ -9,6 +9,12 @@ export { default as NewsletterSignup } from './common/NewsletterSignup.svelte';
 export { default as QuickInfoCard } from './common/QuickInfoCard.svelte';
 export { default as StackedCards } from './common/StackedCards.svelte';
 
+//form components
+export { default as Input } from './form/Input.svelte';
+export { default as Radio } from './form/Radio.svelte';
+export { default as Select } from './form/Select.svelte';
+export { default as Textarea } from './form/Textarea.svelte';
+
 //Layout components
 export { default as Footer } from './layout/Footer.svelte';
 export { default as Navbar } from './layout/Navbar.svelte';
