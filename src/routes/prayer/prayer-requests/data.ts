@@ -8,12 +8,12 @@ export const prayerRequestFormFields = [
 		component: Input,
 		label: 'Name',
 		placeholder: 'Full name',
-		validatorHint: 'Must be 3 to 30 characters',
+		validatorHint: 'Cannot be empty',
 		props: {
 			required: true,
 			title: 'Only letters',
 			maxlength: 30,
-			minlength: 3
+			minlength: 1
 		}
 	},
 	{
@@ -46,12 +46,12 @@ export const prayerRequestFormFields = [
 		component: Input,
 		label: 'Prayer request is for',
 		placeholder: 'Reason for request',
-		validatorHint: 'Must be 3 to 30 characters',
+		validatorHint: 'Cannot be empty',
 		props: {
 			required: true,
 			title: 'Only letters',
 			maxlength: 30,
-			minlength: 3
+			minlength: 1
 		}
 	},
 	{
@@ -74,11 +74,11 @@ export const prayerRequestFormFields = [
 		component: Textarea,
 		label: 'Message',
 		placeholder: 'Details of contact reason',
-		validatorHint: 'Must be 3 to 30 characters',
+		validatorHint: 'Cannot be empty or more than 1000 characters',
 		props: {
 			title: 'Only letters',
-			maxlength: 30,
-			minlength: 3,
+			maxlength: 1000,
+			minlength: 1,
 			class: 'validator input textarea input-md h-24'
 		}
 	}

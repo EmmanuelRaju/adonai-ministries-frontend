@@ -6,12 +6,12 @@ export const invitationFormFields = [
 		component: Input,
 		label: 'Church/Organization name',
 		placeholder: '',
-		validatorHint: 'Must be 3 to 30 characters',
+		validatorHint: 'Cannot be empty',
 		props: {
 			required: true,
 			title: 'Only letters',
 			maxlength: 30,
-			minlength: 3
+			minlength: 1
 		}
 	},
 	{
@@ -19,12 +19,12 @@ export const invitationFormFields = [
 		component: Input,
 		label: 'Pastor/Organization director',
 		placeholder: '',
-		validatorHint: 'Must be 3 to 30 characters',
+		validatorHint: 'Cannot be empty',
 		props: {
 			required: true,
 			title: 'Only letters',
 			maxlength: 30,
-			minlength: 3
+			minlength: 1
 		}
 	},
 	{
@@ -32,12 +32,12 @@ export const invitationFormFields = [
 		component: Input,
 		label: 'Admin/Exec assitant',
 		placeholder: '',
-		validatorHint: 'Must be 3 to 30 characters',
+		validatorHint: 'Cannot be empty',
 		props: {
 			required: true,
 			title: 'Only letters',
 			maxlength: 30,
-			minlength: 3
+			minlength: 1
 		}
 	},
 	{
@@ -57,12 +57,12 @@ export const invitationFormFields = [
 		component: Input,
 		label: 'Website',
 		placeholder: '',
-		validatorHint: 'Must be 3 to 30 characters',
+		validatorHint: 'Cannot be empty',
 		props: {
 			required: true,
 			title: 'Only letters',
 			maxlength: 30,
-			minlength: 3
+			minlength: 1
 		}
 	},
 	{
@@ -77,12 +77,12 @@ export const engagementFormFields = [
 		component: Input,
 		label: 'Name of venue',
 		placeholder: '',
-		validatorHint: 'Must be 3 to 30 characters',
+		validatorHint: 'Cannot be empty',
 		props: {
 			required: true,
 			title: 'Only letters',
 			maxlength: 30,
-			minlength: 3
+			minlength: 1
 		}
 	},
 	{
@@ -95,7 +95,7 @@ export const engagementFormFields = [
 			required: true,
 			title: 'Only letters',
 			maxlength: 30,
-			minlength: 3
+			minlength: 1
 		}
 	},
 	{

@@ -9,26 +9,20 @@
 			type: 'text',
 			component: Input,
 			label: '',
-			placeholder: 'Google maps location link',
-			validatorHint: 'Must be 3 to 30 characters',
-			props: {
-				required: true,
-				title: 'Only letters',
-				maxlength: 30,
-				minlength: 3
-			}
+			placeholder: 'Google maps location link (optional)',
+			validatorHint: 'Cannot be empty'
 		},
 		{
 			type: 'text',
 			component: Input,
 			label: '',
 			placeholder: 'Street address',
-			validatorHint: 'Must be 3 to 30 characters',
+			validatorHint: 'Cannot be empty',
 			props: {
 				required: true,
 				title: 'Only letters',
 				maxlength: 30,
-				minlength: 3
+				minlength: 1
 			}
 		},
 		{
@@ -36,12 +30,12 @@
 			component: Input,
 			label: '',
 			placeholder: 'Street address line 2',
-			validatorHint: 'Must be 3 to 30 characters',
+			validatorHint: 'Cannot be empty',
 			props: {
 				required: true,
 				title: 'Only letters',
 				maxlength: 30,
-				minlength: 3
+				minlength: 1
 			}
 		},
 		{
@@ -49,12 +43,12 @@
 			component: Input,
 			label: '',
 			placeholder: 'City',
-			validatorHint: 'Must be 3 to 30 characters',
+			validatorHint: 'Cannot be empty',
 			props: {
 				required: true,
 				title: 'Only letters',
 				maxlength: 30,
-				minlength: 3
+				minlength: 1
 			}
 		},
 		{
@@ -62,12 +56,12 @@
 			component: Input,
 			label: '',
 			placeholder: 'State',
-			validatorHint: 'Must be 3 to 30 characters',
+			validatorHint: 'Cannot be empty',
 			props: {
 				required: true,
 				title: 'Only letters',
 				maxlength: 30,
-				minlength: 3
+				minlength: 1
 			}
 		},
 		{
@@ -75,12 +69,12 @@
 			component: Input,
 			label: '',
 			placeholder: 'Zipcode',
-			validatorHint: 'Must be 3 to 30 characters',
+			validatorHint: 'Cannot be empty',
 			props: {
 				required: true,
 				title: 'Only letters',
 				maxlength: 30,
-				minlength: 3
+				minlength: 1
 			}
 		},
 		{

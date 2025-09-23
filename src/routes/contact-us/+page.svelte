@@ -1,6 +1,40 @@
-<script>
+<script lang="ts">
+	import { enhance } from '$app/forms';
 	import { Hero } from '$lib/components';
 	import { contactUsFormFields } from './data';
+
+	let isSubmitting = $state(false);
+
+	const handleEnhance = async ({
+		formData,
+		formElement,
+		action,
+		cancel
+	}: {
+		formData: FormData;
+		formElement: HTMLFormElement;
+		action: URL;
+		cancel: () => void;
+	}) => {
+		const requiredFields = formElement.querySelectorAll('[required]');
+		const isValid = Array.from(requiredFields).every((field) =>
+			(field as HTMLInputElement).value.trim()
+		);
+
+		if (!isValid) {
+			cancel();
+			return;
+		}
+
+		isSubmitting = true;
+
+		try {
+			// Simulate form submission logic here
+			console.log('Form submitted:', { formData, action });
+		} finally {
+			isSubmitting = false;
+		}
+	};
 </script>
 
 <Hero title="Contact us" />
@@ -19,7 +53,12 @@
 			<a href="tel:855ADONAIS">(855)-ADONAIS</a>
 			<a href="mailto:inforequest@selvamanuel.org">inforequest@selvamanuel.org</a>
 		</address>
-		<form class="flex flex-col gap-3 md:w-80">
+		<form
+			method="POST"
+			action="?/contactUs"
+			class="flex flex-col md:w-80"
+			use:enhance={handleEnhance}
+		>
 			{#each contactUsFormFields as field}
 				<field.component
 					type={field.type}
@@ -27,10 +66,19 @@
 					class="validator input input-md"
 					placeholder={field.placeholder}
 					validatorHint={field.validatorHint}
+					name={field.label.toLowerCase().replace(/\s+/g, '_')}
+					disabled={isSubmitting}
 					{...field.props}
 				></field.component>
 			{/each}
-			<button class="btn mt-2" type="submit">Contact us</button>
+			<button class="btn mt-2" type="submit" disabled={isSubmitting}>
+				{#if isSubmitting}
+					<span class="loading loading-sm loading-spinner"></span>
+					Sending...
+				{:else}
+					Contact us
+				{/if}
+			</button>
 		</form>
 	</div>
 </section>

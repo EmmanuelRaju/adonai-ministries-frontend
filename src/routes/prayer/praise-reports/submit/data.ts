@@ -1,4 +1,4 @@
-import { Input, Radio, Select, Textarea } from '$lib/components';
+import { Input, Radio, Select, Textarea, Address } from '$lib/components';
 
 export const submitPraiseReportFields = [
 	{
@@ -6,13 +6,13 @@ export const submitPraiseReportFields = [
 		component: Input,
 		label: 'Name',
 		placeholder: 'Full name',
-		validatorHint: 'Must be 3 to 30 characters',
+		validatorHint: 'Cannot be empty',
 		props: {
 			class: 'input input-md',
 			required: true,
 			title: 'Only letters',
 			maxlength: 30,
-			minlength: 3
+			minlength: 1
 		}
 	},
 	{
@@ -42,12 +42,12 @@ export const submitPraiseReportFields = [
 		type: 'text',
 		component: Input,
 		label: 'When did this occur',
-		validatorHint: 'Must be 3 to 30 characters',
+		validatorHint: 'Cannot be empty',
 		props: {
 			required: true,
 			title: 'Only letters',
 			maxlength: 30,
-			minlength: 3,
+			minlength: 1,
 			class: 'input input-md'
 		}
 	},
@@ -55,33 +55,27 @@ export const submitPraiseReportFields = [
 		type: 'text',
 		component: Input,
 		label: 'Where did this occur',
-		validatorHint: 'Must be 3 to 30 characters',
+		validatorHint: 'Cannot be empty',
 		props: {
 			required: true,
 			title: 'Only letters',
 			maxlength: 30,
-			minlength: 3,
+			minlength: 1,
 			class: 'input input-md'
 		}
 	},
 	{
-		component: Textarea,
-		label: 'Address',
-		validatorHint: 'Must be 3 to 30 characters',
-		props: {
-			maxlength: 30,
-			minlength: 3,
-			class: 'validator input textarea input-md h-24'
-		}
+		component: Address,
+		label: 'Address'
 	},
 	{
 		component: Textarea,
 		label: 'Praise report',
-		validatorHint: 'Must be 3 to 30 characters',
+		validatorHint: 'Cannot be empty',
 		props: {
 			required: true,
 			maxlength: 30,
-			minlength: 3,
+			minlength: 1,
 			class: 'validator input textarea input-md h-24'
 		}
 	},

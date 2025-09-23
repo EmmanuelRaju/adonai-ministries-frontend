@@ -37,5 +37,5 @@
 			</label>
 		{/each}
 	</div>
-	<p class="validator-hint hidden transition duration-200">{validatorHint}</p>
+	<p class="validator-hint mt-0 hidden transition duration-200">{validatorHint}</p>
 </fieldset>

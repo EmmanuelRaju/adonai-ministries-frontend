@@ -7,12 +7,12 @@ export const praiseReportFormFields = [
 		component: Input,
 		label: 'Name',
 		placeholder: 'Full name',
-		validatorHint: 'Must be 3 to 30 characters',
+		validatorHint: 'Cannot be empty',
 		props: {
 			required: true,
 			title: 'Only letters',
 			maxlength: 30,
-			minlength: 3
+			minlength: 1
 		}
 	},
 	{
@@ -45,12 +45,12 @@ export const praiseReportFormFields = [
 		component: Input,
 		label: 'Prayer request was for',
 		placeholder: 'Original prayer request',
-		validatorHint: 'Must be 3 to 30 characters',
+		validatorHint: 'Cannot be empty',
 		props: {
 			required: true,
 			title: 'Only letters',
 			maxlength: 30,
-			minlength: 3
+			minlength: 1
 		}
 	},
 	{
@@ -58,11 +58,11 @@ export const praiseReportFormFields = [
 		component: Textarea,
 		label: 'Testimony',
 		placeholder: 'Share how God answered your prayer',
-		validatorHint: 'Must be 3 to 500 characters',
+		validatorHint: 'Cannot be empty or more than 1000 characters',
 		props: {
 			title: 'Share your testimony',
-			maxlength: 500,
-			minlength: 3,
+			maxlength: 1000,
+			minlength: 1,
 			class: 'validator input textarea input-md h-24'
 		}
 	}

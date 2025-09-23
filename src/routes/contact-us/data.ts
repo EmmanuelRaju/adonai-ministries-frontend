@@ -6,12 +6,12 @@ export const contactUsFormFields = [
 		component: Input,
 		label: 'Name',
 		placeholder: 'Full name',
-		validatorHint: 'Must be 3 to 30 characters',
+		validatorHint: 'Cannot be empty',
 		props: {
 			required: true,
 			title: 'Only letters',
 			maxlength: 30,
-			minlength: 3
+			minlength: 1
 		}
 	},
 	{
@@ -29,12 +29,12 @@ export const contactUsFormFields = [
 		component: Input,
 		label: 'Subject',
 		placeholder: 'Reason for contact',
-		validatorHint: 'Must be 3 to 30 characters',
+		validatorHint: 'Cannot be empty',
 		props: {
 			required: true,
 			title: 'Only letters',
 			maxlength: 30,
-			minlength: 3
+			minlength: 1
 		}
 	},
 	{
@@ -42,12 +42,12 @@ export const contactUsFormFields = [
 		component: Textarea,
 		label: 'Message',
 		placeholder: 'Details of contact reason',
-		validatorHint: 'Must be 3 to 30 characters',
+		validatorHint: 'Cannot be empty or more than 1000 characters',
 		props: {
 			title: 'Only letters',
-			maxlength: 30,
-			minlength: 3,
-			class: 'validator input textarea input-md h-24'
+			maxlength: 1000,
+			class: 'validator input textarea input-md h-24',
+			required: true
 		}
 	}
 ];

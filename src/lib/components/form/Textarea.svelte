@@ -11,6 +11,6 @@
 
 <fieldset class="fieldset">
 	<legend class="fieldset-legend">{label}</legend>
-	<textarea {...rest}></textarea>
-	<p class="validator-hint hidden transition duration-200">{validatorHint}</p>
+	<textarea {...rest} class="w-full {rest.class || ''}"></textarea>
+	<p class="validator-hint mt-0 hidden transition duration-200">{validatorHint}</p>
 </fieldset>
