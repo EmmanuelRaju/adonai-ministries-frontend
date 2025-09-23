@@ -10,6 +10,7 @@ export { default as QuickInfoCard } from './common/QuickInfoCard.svelte';
 export { default as StackedCards } from './common/StackedCards.svelte';
 
 //form components
+export { default as Address } from './form/Address.svelte';
 export { default as Input } from './form/Input.svelte';
 export { default as Radio } from './form/Radio.svelte';
 export { default as Select } from './form/Select.svelte';
