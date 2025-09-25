@@ -6,6 +6,7 @@ export { default as Hero } from './common/Hero.svelte';
 export { default as HeroBlockquote } from './common/HeroBlockquote.svelte';
 export { default as MinistryCard } from './common/MinistryCard.svelte';
 export { default as NewsletterSignup } from './common/NewsletterSignup.svelte';
+export { default as PayPalDonate } from './common/PayPalDonate.svelte';
 export { default as QuickInfoCard } from './common/QuickInfoCard.svelte';
 export { default as StackedCards } from './common/StackedCards.svelte';
 export { default as Toast } from './common/Toast.svelte';

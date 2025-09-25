@@ -29,7 +29,7 @@
 		be afraid (John 14:27). Believe in God and also in Christ Jesus (John 14:1). God Bless you.
 	</p>
 
-	<section class="mt-8">
+	<!-- <section class="mt-8">
 		<h2 class="text-center">Share Your Testimony</h2>
 		<form class="mx-auto flex flex-col gap-3 md:w-80">
 			{#each praiseReportFormFields as field, i (i)}
@@ -45,5 +45,5 @@
 			{/each}
 			<button class="btn mt-2" type="submit">Submit testimony</button>
 		</form>
-	</section>
+	</section> -->
 </section>

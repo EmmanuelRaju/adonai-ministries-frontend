@@ -25,6 +25,7 @@ jobs:
           PUBLIC_MODE: PROD
           RESEND_API_KEY: ${{secrets.RESEND_API_KEY}}
           TO_EMAIL: ${{secrets.TO_EMAIL}}
+          PUBLIC_PAYPAL_CLIENT_ID: ${{secrets.PUBLIC_PAYPAL_CLIENT_ID}}
         run: |
           npm install
           CLOUDFLARE_DEPLOY=1 npm run build

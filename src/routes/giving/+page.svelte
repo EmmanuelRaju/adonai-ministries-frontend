@@ -1,5 +1,5 @@
 <script>
-	import { Hero } from '$lib/components';
+	import { Hero, PayPalDonate } from '$lib/components';
 </script>
 
 <Hero title="Giving" />
@@ -29,4 +29,5 @@
 		received are tax deductible as allowed by IRS regulations. Upon receipt of sufficient funds for
 		a specific project, support will be used for an equally important outreach.
 	</p>
+	<PayPalDonate amount="100.00" />
 </section>
