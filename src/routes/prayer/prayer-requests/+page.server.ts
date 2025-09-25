@@ -1,10 +1,10 @@
-import { contactUs } from '$lib/utils/actions';
+import { submitPrayerRequest } from '$lib/utils/actions';
 import { fail, type Actions } from '@sveltejs/kit';
 import { PUBLIC_MODE } from '$env/static/public';
 import { validateTurnstileToken } from '$lib/utils/validateTurnstileToken';
 
 export const actions: Actions = {
-	contactUs: async ({ request }) => {
+	submitPrayerRequest: async ({ request }) => {
 		const formData = await request.formData();
 		const token = formData.get('cf-turnstile-response')?.toString() || '';
 
@@ -17,7 +17,7 @@ export const actions: Actions = {
 			}
 		}
 
-		const result = await contactUs(formData);
+		const result = await submitPrayerRequest(formData);
 
 		// console.log('result', result);
 

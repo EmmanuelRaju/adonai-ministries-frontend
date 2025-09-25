@@ -64,3 +64,67 @@ export const contactUs = async (
 		};
 	}
 };
+
+// ...existing code...
+
+export const submitPrayerRequest = async (
+	formData: FormData
+): Promise<{ type: string; status: number; data: { message: string; error?: Error } }> => {
+	try {
+		const data = Object.fromEntries(formData);
+
+		// Create email content
+		const emailContent = `
+					<h2>New Prayer Request Submission</h2>
+					<table style="width: 100%; border-collapse: collapse;">
+							${Object.entries(data)
+								.filter(([key]) => key !== 'cf-turnstile-response')
+								.map(
+									([key, value]) => `
+											<tr style="border-bottom: 1px solid #eee;">
+													<td style="padding: 8px; font-weight: bold;">${key.replace(/_/g, ' ').toUpperCase()}</td>
+													<td style="padding: 8px;">${value}</td>
+											</tr>
+									`
+								)
+								.join('')}
+					</table>
+			`;
+
+		// Send email
+		const response = await resend.emails.send({
+			from: 'AMI Prayer Request <prayer@selvamanuel.com>',
+			to: [TO_EMAIL],
+			subject: `New Prayer Request: ${data.name || 'Anonymous'}`,
+			html: emailContent,
+			replyTo: data.email?.toString()
+		});
+
+		if (response.error == null) {
+			return {
+				type: 'success',
+				status: 200,
+				data: { message: 'Prayer request submitted successfully!' }
+			};
+		} else {
+			console.error('Error sending prayer request:', response.error);
+			return {
+				type: 'error',
+				status: 500,
+				data: {
+					message: response.error.message
+				}
+			};
+		}
+	} catch (error) {
+		console.error('Error sending prayer request:', error);
+		return {
+			type: 'error',
+			status: 500,
+			data: {
+				message: 'Failed to submit prayer request. Please try again.',
+				error: error instanceof Error ? error : new Error('Unknown error')
+			}
+		};
+	}
+};
