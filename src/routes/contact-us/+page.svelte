@@ -1,15 +1,14 @@
 <script lang="ts">
 	import { enhance } from '$app/forms';
 	import { PUBLIC_MODE, PUBLIC_TURNSTILE_SITE_KEY } from '$env/static/public';
-	import { Hero } from '$lib/components';
+	import { Hero, Toast } from '$lib/components';
 	import { contactUsFormFields } from './data';
 	import { Turnstile } from 'svelte-turnstile';
-	import { fade } from 'svelte/transition';
 
 	let isSubmitting = $state(false);
 	let showCaptcha = $state(true);
-	let successMessage = $state('');
-	let errorMessage = $state('');
+	let submissionMessage: string | null = $state(null);
+	let submissionStatus: string | null = $state(null);
 	let { form } = $props();
 
 	$effect(() => {
@@ -22,19 +21,14 @@
 	});
 
 	const handleEnhance = async ({
-		formData,
 		formElement,
-		action,
 		cancel
 	}: {
-		formData: FormData;
 		formElement: HTMLFormElement;
-		action: URL;
 		cancel: () => void;
 	}) => {
 		// Reset messages
-		successMessage = '';
-		errorMessage = '';
+		submissionMessage = '';
 
 		const requiredFields = formElement.querySelectorAll('[required]');
 		const isValid = Array.from(requiredFields).every((field) =>
@@ -42,7 +36,8 @@
 		);
 
 		if (!isValid) {
-			errorMessage = 'Please fill in all required fields.';
+			submissionStatus = 'error';
+			submissionMessage = 'Please fill in all required fields.';
 			cancel();
 			return;
 		}
@@ -51,9 +46,11 @@
 
 		return async ({ result }: { result: { type: string; data?: { message?: string } } }) => {
 			if (result.type === 'failure') {
-				errorMessage = result.data?.message || 'An error occurred. Please try again.';
+				submissionStatus = 'error';
+				submissionMessage = result.data?.message || 'An error occurred. Please try again.';
 			} else if (result.type === 'success') {
-				successMessage = 'Message sent successfully!';
+				submissionStatus = 'success';
+				submissionMessage = 'Message sent successfully!';
 				formElement.reset();
 			}
 			isSubmitting = false;
@@ -62,44 +59,6 @@
 </script>
 
 <Hero title="Contact us" />
-
-{#if errorMessage}
-	<div class="container-width mx-auto mt-4 alert alert-error" transition:fade>
-		<svg
-			xmlns="http://www.w3.org/2000/svg"
-			class="h-6 w-6 shrink-0 stroke-current"
-			fill="none"
-			viewBox="0 0 24 24"
-		>
-			<path
-				stroke-linecap="round"
-				stroke-linejoin="round"
-				stroke-width="2"
-				d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"
-			/>
-		</svg>
-		<span>{errorMessage}</span>
-	</div>
-{/if}
-
-{#if successMessage}
-	<div class="container-width mx-auto mt-4 alert alert-success" transition:fade>
-		<svg
-			xmlns="http://www.w3.org/2000/svg"
-			class="h-6 w-6 shrink-0 stroke-current"
-			fill="none"
-			viewBox="0 0 24 24"
-		>
-			<path
-				stroke-linecap="round"
-				stroke-linejoin="round"
-				stroke-width="2"
-				d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-			/>
-		</svg>
-		<span>{successMessage}</span>
-	</div>
-{/if}
 
 <section class="container-width mx-auto p-4 pt-8 md:text-justify">
 	<p class="drop-cap">
@@ -142,8 +101,9 @@
 				{/if}
 			</button>
 			{#if showCaptcha && PUBLIC_MODE !== 'DEV'}
-				<Turnstile siteKey={PUBLIC_TURNSTILE_SITE_KEY} />
+				<Turnstile siteKey={PUBLIC_TURNSTILE_SITE_KEY} class="mt-2" />
 			{/if}
+			<Toast bind:kind={submissionStatus} bind:message={submissionMessage} classes="mt-2"></Toast>
 		</form>
 	</div>
 </section>

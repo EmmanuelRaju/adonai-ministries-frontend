@@ -28,7 +28,7 @@ export const contactUs = async (
         `;
 
 		// Send email
-		await resend.emails.send({
+		const response = await resend.emails.send({
 			from: 'AMI Contact Form <contact@selvamanuel.com>',
 			to: [TO_EMAIL],
 			subject: `New Contact Form Submission: ${data.name || 'No Name'}`,
@@ -36,11 +36,22 @@ export const contactUs = async (
 			replyTo: data.email?.toString()
 		});
 
-		return {
-			type: 'success',
-			status: 200,
-			data: { message: 'Message sent successfully!' }
-		};
+		if (response.error == null) {
+			return {
+				type: 'success',
+				status: 200,
+				data: { message: 'Message sent successfully!' }
+			};
+		} else {
+			console.error('Error sending email:', response.error);
+			return {
+				type: 'error',
+				status: 500,
+				data: {
+					message: response.error.message
+				}
+			};
+		}
 	} catch (error) {
 		console.error('Error sending email:', error);
 		return {

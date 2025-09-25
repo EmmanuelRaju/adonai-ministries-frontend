@@ -39,6 +39,8 @@ export const actions: Actions = {
 
 		const result = await contactUs(formData);
 
+		console.log('result', result);
+
 		if (result.type === 'error') {
 			return fail(result.status, {
 				error: true,
