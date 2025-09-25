@@ -8,6 +8,7 @@ type EmailConfig = {
 	fromEmail: string;
 	fromName: string;
 	subjectPrefix: string;
+	includeAttachments?: boolean;
 };
 
 type ActionResult = {
@@ -42,14 +43,33 @@ const handleEmailSubmission = async (
 ): Promise<ActionResult> => {
 	try {
 		const data = Object.fromEntries(formData);
+
+		const attachments = [];
+
+		if (config.includeAttachments) {
+			const file = formData.get('formal_letter');
+			if (file && file instanceof File && file.size > 0) {
+				const arrayBuffer = await file.arrayBuffer();
+				const base64 = Buffer.from(arrayBuffer).toString('base64');
+
+				attachments.push({
+					content: base64,
+					filename: file.name,
+					type: file.type,
+					disposition: 'attachment'
+				});
+			}
+		}
+
 		const emailContent = createEmailContent(data, config.formTitle);
 
 		const response = await resend.emails.send({
 			from: `${config.fromName} <${config.fromEmail}>`,
 			to: [TO_EMAIL],
-			subject: `${config.subjectPrefix}: ${data.name || 'Anonymous'}`,
+			subject: `${config.subjectPrefix}: ${data.name || data['church/organization_name'] || 'Anonymous'}`,
 			html: emailContent,
-			replyTo: data.email?.toString()
+			replyTo: data.email?.toString(),
+			attachments: attachments.length > 0 ? attachments : undefined
 		});
 
 		if (response.error == null) {
@@ -102,4 +122,13 @@ export const submitPraiseReport = (formData: FormData) =>
 		fromEmail: 'praise@selvamanuel.com',
 		fromName: 'AMI Praise Report',
 		subjectPrefix: 'New Praise Report'
+	});
+
+export const submitInvitation = (formData: FormData) =>
+	handleEmailSubmission(formData, {
+		formTitle: 'Invitation Request',
+		fromEmail: 'invitations@selvamanuel.com',
+		fromName: 'AMI Invitation Request',
+		subjectPrefix: 'New Invitation Request',
+		includeAttachments: true
 	});
