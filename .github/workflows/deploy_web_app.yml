@@ -19,10 +19,12 @@ jobs:
         with:
           node-version: 22.19.0
       - name: Build
-        # env:
-        #   PUBLIC_SUPABASE_BACKEND_URL: ${{secrets.PUBLIC_SUPABASE_BACKEND_URL}}
-        #   PUBLIC_SUPABASE_ANON_KEY: ${{secrets.PUBLIC_SUPABASE_ANON_KEY}}
-        #   PUBLIC_SUPABASE_STORAGE_BUCKET: ${{secrets.PUBLIC_SUPABASE_STORAGE_BUCKET}}
+        env:
+          TURNSTILE_SECRET_KEY: ${{secrets.TURNSTILE_SECRET_KEY}}
+          PUBLIC_TURNSTILE_SITE_KEY: ${{secrets.PUBLIC_TURNSTILE_SITE_KEY}}
+          PUBLIC_MODE: PROD
+          RESEND_API_KEY: ${{secrets.RESEND_API_KEY}}
+          TO_EMAIL: ${{secrets.TO_EMAIL}}
         run: |
           npm install
           CLOUDFLARE_DEPLOY=1 npm run build

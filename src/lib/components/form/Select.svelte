@@ -23,7 +23,7 @@
 
 <fieldset class="fieldset">
 	<legend class="fieldset-legend">{label}</legend>
-	<select {...rest} class="select w-full {rest.class || ''}" bind:value>
+	<select {...rest} class="select w-full {rest?.class || ''}" bind:value>
 		{#each options as option}
 			<option value={option.value} disabled={option.disabled} selected={option.selected}>
 				{option.label}

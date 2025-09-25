@@ -1,9 +1,24 @@
 <script lang="ts">
 	import { enhance } from '$app/forms';
+	import { PUBLIC_MODE, PUBLIC_TURNSTILE_SITE_KEY } from '$env/static/public';
 	import { Hero } from '$lib/components';
 	import { contactUsFormFields } from './data';
+	import { Turnstile } from 'svelte-turnstile';
 
 	let isSubmitting = $state(false);
+
+	let showCaptcha = $state(true);
+
+	let { form } = $props();
+
+	$effect(() => {
+		if (form) {
+			// Hide and re-show the CAPTCHA to allow multiple submissions
+			showCaptcha = false;
+			setTimeout(() => (showCaptcha = true), 0);
+			form = null;
+		}
+	});
 
 	const handleEnhance = async ({
 		formData,
@@ -79,6 +94,9 @@
 					Contact us
 				{/if}
 			</button>
+			{#if showCaptcha && PUBLIC_MODE !== 'DEV'}
+				<Turnstile siteKey={PUBLIC_TURNSTILE_SITE_KEY} />
+			{/if}
 		</form>
 	</div>
 </section>
