@@ -67,7 +67,7 @@ export const invitationFormFields = [
 	},
 	{
 		component: Address,
-		label: 'Address of Church/Ministry'
+		label: 'Ministry address'
 	}
 ];
 

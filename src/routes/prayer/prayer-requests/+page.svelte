@@ -93,7 +93,7 @@
 			class="mx-auto flex flex-col gap-3 md:w-80"
 			use:enhance={handleEnhance}
 		>
-			{#each prayerRequestFormFields as field}
+			{#each prayerRequestFormFields as field, i (i)}
 				<field.component
 					type={field.type}
 					label={field.label}

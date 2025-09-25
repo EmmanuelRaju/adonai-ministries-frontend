@@ -23,7 +23,7 @@
 <fieldset class="fieldset">
 	<legend class="fieldset-legend">{label}</legend>
 	<div class="flex gap-5">
-		{#each options as option}
+		{#each options as option, i (option.id + i)}
 			<label class="flex items-center gap-2" for={option.id}>
 				<input
 					{name}

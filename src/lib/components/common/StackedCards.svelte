@@ -26,7 +26,7 @@
 </script>
 
 <section class="flex flex-col gap-5 md:gap-0">
-	{#each data as item, i}
+	{#each data as item, i (i)}
 		<div
 			use:revealOnScroll
 			class="card-container relative"

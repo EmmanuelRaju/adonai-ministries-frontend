@@ -21,7 +21,7 @@
 
 <section class="container-width mx-auto p-4 pt-8 md:text-justify">
 	<ol class="statement-of-faith">
-		{#each statements as statement}
+		{#each statements as statement, i (i)}
 			<li class="relative pb-10 pl-5 lg:pl-10">{statement}</li>
 		{/each}
 	</ol>

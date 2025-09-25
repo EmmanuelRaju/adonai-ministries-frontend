@@ -194,7 +194,7 @@
 		possible and the incurable to become curable.
 	</p>
 	<div class="flex flex-col gap-5">
-		{#each verses as it, i}
+		{#each verses as it, i (i)}
 			<Blockquote quote={it.verse} cite={it.reference} dir={i % 2 == 0 ? 'left' : 'right'}
 			></Blockquote>
 		{/each}

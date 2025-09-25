@@ -26,7 +26,7 @@
 	</p>
 	<p>Come to the presence of God and experience:</p>
 	<ul class="">
-		{#each statements as statement}
+		{#each statements as statement, i (i)}
 			<li class="">{statement}</li>
 		{/each}
 	</ul>

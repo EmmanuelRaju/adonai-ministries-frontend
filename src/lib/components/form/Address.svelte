@@ -108,7 +108,7 @@
 	{#if label}
 		<legend class="fieldset-legend">{label}</legend>
 	{/if}
-	{#each addressFormFields as field}
+	{#each addressFormFields as field, i (i)}
 		<field.component
 			type={field.type}
 			label={field.label}

@@ -80,7 +80,7 @@
 			class="flex flex-col md:w-80"
 			use:enhance={handleEnhance}
 		>
-			{#each contactUsFormFields as field}
+			{#each contactUsFormFields as field, i (i)}
 				<field.component
 					type={field.type}
 					label={field.label}

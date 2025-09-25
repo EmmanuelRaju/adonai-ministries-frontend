@@ -101,14 +101,14 @@
 		Sanctification of our Saved being.
 	</p>
 	<div class="flex flex-col gap-5">
-		{#each verses as it, i}
+		{#each verses as it, i (i)}
 			<Blockquote quote={it.verse} cite={it.reference} dir={i % 2 == 0 ? 'left' : 'right'}
 			></Blockquote>
 		{/each}
 	</div>
 	<h2>How can I receive my miracle?</h2>
 	<div class="flex flex-col gap-5">
-		{#each miracleReceptionVerses as it, i}
+		{#each miracleReceptionVerses as it, i (i)}
 			<Blockquote quote={it.verse} cite={it.reference} dir={i % 2 == 0 ? 'left' : 'right'}
 			></Blockquote>
 		{/each}

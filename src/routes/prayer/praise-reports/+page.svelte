@@ -32,7 +32,7 @@
 	<section class="mt-8">
 		<h2 class="text-center">Share Your Testimony</h2>
 		<form class="mx-auto flex flex-col gap-3 md:w-80">
-			{#each praiseReportFormFields as field}
+			{#each praiseReportFormFields as field, i (i)}
 				<field.component
 					type={field.type}
 					label={field.label}

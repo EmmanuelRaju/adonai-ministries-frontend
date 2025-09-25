@@ -66,7 +66,7 @@
 			<legend class="fieldset-legend">Theme</legend>
 			<select class="select w-full" bind:value={selectedTheme}>
 				<option disabled selected>Pick a theme</option>
-				{#each themes as theme}
+				{#each themes as theme, i (theme + i)}
 					<option class="captialise" value={theme}>{theme}</option>
 				{/each}
 			</select>
@@ -75,7 +75,7 @@
 			<legend class="fieldset-legend">Heading font</legend>
 			<select class="select w-full" bind:value={selectedHeadingFont}>
 				<option disabled selected>Pick a font</option>
-				{#each fonts as font}
+				{#each fonts as font, i (font + i)}
 					<option class="captialise" value={font}>{font}</option>
 				{/each}
 			</select>
@@ -84,7 +84,7 @@
 			<legend class="fieldset-legend">Body font</legend>
 			<select class="select w-full" bind:value={selectedBodyFont}>
 				<option disabled selected>Pick a font</option>
-				{#each fonts as font}
+				{#each fonts as font, i (font + i)}
 					<option class="captialise" value={font}>{font}</option>
 				{/each}
 			</select>

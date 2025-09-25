@@ -1,4 +1,4 @@
-import { Input, Radio, Select, Textarea, Address } from '$lib/components';
+import { Input, Select, Textarea, Address } from '$lib/components';
 
 export const submitPraiseReportFields = [
 	{
@@ -34,7 +34,7 @@ export const submitPraiseReportFields = [
 		validatorHint: 'Required',
 		props: {
 			required: true,
-			pattern: '[0-9]*',
+			pattern: '^\\+?[1-9][0-9\\-\\(\\)\\s]{9,}$',
 			class: 'validator input input-md tabular-nums'
 		}
 	},
@@ -95,19 +95,19 @@ export const submitPraiseReportFields = [
 				})
 			)
 		]
-	},
-	{
-		component: Radio,
-		label: 'Please add me to mailing list',
-		name: 'mailing-list',
-		validatorHint: 'Required',
-		value: 'yes',
-		options: [
-			{ id: 'yes', value: 'yes', label: 'Yes' },
-			{ id: 'no', value: 'no', label: 'No' }
-		],
-		props: {
-			required: true
-		}
 	}
+	// {
+	// 	component: Radio,
+	// 	label: 'Please add me to mailing list',
+	// 	name: 'mailing-list',
+	// 	validatorHint: 'Required',
+	// 	value: 'yes',
+	// 	options: [
+	// 		{ id: 'yes', value: 'yes', label: 'Yes' },
+	// 		{ id: 'no', value: 'no', label: 'No' }
+	// 	],
+	// 	props: {
+	// 		required: true
+	// 	}
+	// }
 ];

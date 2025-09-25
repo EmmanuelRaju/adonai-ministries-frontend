@@ -18,7 +18,7 @@
 		<div class="flex flex-col justify-between md:flex-row md:gap-10">
 			<div>
 				<h2 class="text-left">Requesting ministry details</h2>
-				{#each invitationFormFields as field}
+				{#each invitationFormFields as field, i (i)}
 					<field.component
 						type={field.type}
 						label={field.label}
@@ -32,7 +32,7 @@
 			</div>
 			<div>
 				<h2 class="text-left">Engagement details</h2>
-				{#each engagementFormFields as field}
+				{#each engagementFormFields as field, i (i)}
 					<field.component
 						type={field.type}
 						label={field.label}

@@ -96,7 +96,7 @@
 				<ul
 					class="absolute z-[1] hidden flex-col overflow-clip border border-base-100 bg-base-100 shadow-md transition group-hover:flex"
 				>
-					{#each params.children as item}
+					{#each params.children as item, i (i)}
 						<a href={item.href} class="nav-link">{item.label}</a>
 					{/each}
 				</ul>
@@ -135,7 +135,7 @@
 			</button>
 			{#if activeSubMenuId === params.id}
 				<ul class="flex flex-col overflow-clip" transition:slide>
-					{#each params.children as item}
+					{#each params.children as item, i (i)}
 						<a
 							href={item.href}
 							class="nav-link block"
