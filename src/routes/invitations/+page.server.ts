@@ -3,6 +3,8 @@ import { fail, type Actions } from '@sveltejs/kit';
 import { PUBLIC_MODE } from '$env/static/public';
 import { validateTurnstileToken } from '$lib/utils/validateTurnstileToken';
 
+export const prerender = false;
+
 const MAX_FILE_SIZE = 5 * 1024 * 1024; // 5MB
 
 export const actions: Actions = {

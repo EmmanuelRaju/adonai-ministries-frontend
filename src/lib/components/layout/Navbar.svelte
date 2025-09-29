@@ -94,7 +94,7 @@
 					{params.label}
 				</p>
 				<ul
-					class="absolute z-[1] hidden flex-col overflow-clip border border-base-100 bg-base-100 shadow-md transition group-hover:flex"
+					class="absolute z-[5] hidden flex-col overflow-clip border border-base-100 bg-base-100 shadow-md transition group-hover:flex"
 				>
 					{#each params.children as item, i (i)}
 						<a href={item.href} class="nav-link">{item.label}</a>
