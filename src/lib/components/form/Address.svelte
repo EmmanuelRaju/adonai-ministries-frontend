@@ -1,8 +1,8 @@
 <script lang="ts">
 	import { Input, Select } from '$lib/components';
-	import { countries } from 'countries-list';
+	import { countries } from '$lib/data/countries';
 
-	let { label }: { label: string } = $props();
+	let { label, required = false }: { label: string; required?: boolean } = $props();
 
 	const addressFormFields = [
 		{
@@ -12,7 +12,8 @@
 			placeholder: 'Google maps location link (optional)',
 			validatorHint: 'Cannot be empty',
 			props: {
-				name: `${label.toLowerCase().replace(/\s+/g, '_')}_location`
+				name: `${label.toLowerCase().replace(/\s+/g, '_')}_location`,
+				required: false
 			}
 		},
 		{
@@ -23,7 +24,7 @@
 			validatorHint: 'Cannot be empty',
 			props: {
 				name: `${label.toLowerCase().replace(/\s+/g, '_')}_street_line_1`,
-				required: true,
+				required: required,
 				title: 'Only letters',
 				maxlength: 30,
 				minlength: 1
@@ -37,7 +38,7 @@
 			validatorHint: 'Cannot be empty',
 			props: {
 				name: `${label.toLowerCase().replace(/\s+/g, '_')}_street_line_2`,
-				required: true,
+				required: required,
 				title: 'Only letters',
 				maxlength: 30,
 				minlength: 1
@@ -51,7 +52,7 @@
 			validatorHint: 'Cannot be empty',
 			props: {
 				name: `${label.toLowerCase().replace(/\s+/g, '_')}_city`,
-				required: true,
+				required: required,
 				title: 'Only letters',
 				maxlength: 30,
 				minlength: 1
@@ -65,7 +66,7 @@
 			validatorHint: 'Cannot be empty',
 			props: {
 				name: `${label.toLowerCase().replace(/\s+/g, '_')}_state`,
-				required: true,
+				required: required,
 				title: 'Only letters',
 				maxlength: 30,
 				minlength: 1
@@ -79,7 +80,7 @@
 			validatorHint: 'Cannot be empty',
 			props: {
 				name: `${label.toLowerCase().replace(/\s+/g, '_')}_zipcode`,
-				required: true,
+				required: required,
 				title: 'Only letters',
 				maxlength: 30,
 				minlength: 1
@@ -91,13 +92,13 @@
 			validatorHint: 'Required',
 			props: {
 				name: `${label.toLowerCase().replace(/\s+/g, '_')}_country`,
-				required: true
+				required: required
 			},
 			options: [
 				{ value: '', label: 'Choose country', disabled: true, selected: true },
 				...Object.values(countries).map((country) => ({
-					value: country.name,
-					label: country.name
+					value: country,
+					label: country
 				}))
 			]
 		}

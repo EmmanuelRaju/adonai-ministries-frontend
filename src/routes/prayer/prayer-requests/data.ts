@@ -1,5 +1,5 @@
 import { Input, Select, Textarea } from '$lib/components';
-import { countries } from 'countries-list';
+import { countries } from '$lib/data/countries';
 import { prayerRequestReasons } from '$lib/data/prayer-request';
 
 export const prayerRequestFormFields = [
@@ -36,8 +36,8 @@ export const prayerRequestFormFields = [
 		options: [
 			{ value: '', label: 'Choose', disabled: true, selected: true },
 			...Object.values(countries).map((country) => ({
-				value: country.name,
-				label: country.name
+				value: country,
+				label: country
 			}))
 		]
 	},

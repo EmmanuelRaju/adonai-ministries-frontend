@@ -33,7 +33,6 @@ export const submitPraiseReportFields = [
 		placeholder: 'Phone',
 		validatorHint: 'Required',
 		props: {
-			required: true,
 			pattern: '^\\+?[1-9][0-9\\-\\(\\)\\s]{9,}$',
 			class: 'validator input input-md tabular-nums'
 		}
@@ -66,7 +65,10 @@ export const submitPraiseReportFields = [
 	},
 	{
 		component: Address,
-		label: 'Address'
+		label: 'Address',
+		props: {
+			required: false
+		}
 	},
 	{
 		component: Textarea,
