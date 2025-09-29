@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Hero, Blockquote } from '$lib/components';
+	import { Hero, Blockquote, SEO } from '$lib/components';
 
 	const verses = [
 		{
@@ -183,6 +183,12 @@
 		}
 	];
 </script>
+
+<SEO
+	title="AMI | Miraculous word"
+	description="My dear friend, you may be longing like Job, “Oh, that I might have my request, that God would grant me the thing that I long for!”(Job 6:8). The answer is Lord Jesus Christ. May the following verses increase your faith and cause you to believe for the impossible to become possible and the incurable to become curable."
+	url="/the-christ/miraculous-word"
+></SEO>
 
 <Hero title="Miraculous word" />
 

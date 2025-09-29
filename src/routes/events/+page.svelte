@@ -1,5 +1,5 @@
 <script>
-	import { Hero } from '$lib/components';
+	import { Hero, SEO } from '$lib/components';
 	import events from '$lib/assets/images/events.jpg?enhanced';
 
 	const statements = [
@@ -11,6 +11,12 @@
 		'Goodness of the Gracious Lord'
 	];
 </script>
+
+<SEO
+	title="AMI | Events"
+	description="At every “Adonai’s gathering”, Bro. Selva Manuel will deliver the anointed message of God the Holy Spirit and pray for those who need God’s healing and deliverance. All are welcome. God will graciously meet with you at the point of your need and Glorify His name."
+	url="/events"
+></SEO>
 
 <Hero title="Events" img={events} />
 

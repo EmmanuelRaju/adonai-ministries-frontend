@@ -1,7 +1,13 @@
 <script>
-	import { Hero, PayPalDonate } from '$lib/components';
+	import { Hero, PayPalDonate, SEO } from '$lib/components';
 	import giving from '$lib/assets/images/giving.jpg?enhanced';
 </script>
+
+<SEO
+	title="AMI | Giving"
+	description="We invite you to please consider becoming “Adonai’s Friend”, by your monthly financial partnership with this Blessed ministry. The Bible declares in II Corinthians 9: 8 [AMP],” God is able to make all grace [every favor and earthly blessing] come in abundance to you, so that you may always [under all circumstances, regardless of the need] have complete sufficiency in everything [being completely self-sufficient in Him], and have an abundance for every good work and act of charity.” It is our sincere promise to you that we will fervently pray for you."
+	url="/giving"
+></SEO>
 
 <Hero title="Giving" img={giving} />
 

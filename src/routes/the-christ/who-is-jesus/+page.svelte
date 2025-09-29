@@ -1,6 +1,12 @@
 <script lang="ts">
-	import { Hero } from '$lib/components';
+	import { Hero, SEO } from '$lib/components';
 </script>
+
+<SEO
+	title="AMI | Who is Jesus Christ"
+	description="CHRIST means ‘Anointed’. CHRIST is ‘The Messiah’. We can only know that Jesus is the Christ by revelation of the father (Matt 16:17) by God the Holy Spirit.(Eph 3:5). Jesus Christ was born to Save His people from their sins (Matt 1: 21). Beyond all question, the mystery of godliness is great: He appeared in a body, was vindicated by the Spirit, was seen by angels, was preached among the nations, was believed on in the world, and was taken up in glory. (I Tim 3:16)."
+	url="/the-christ/who-is-jesus"
+></SEO>
 
 <Hero title="Who is Jesus Christ" />
 

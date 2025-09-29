@@ -1,7 +1,13 @@
 <script>
-	import { Blockquote, Hero } from '$lib/components';
+	import { Blockquote, Hero, SEO } from '$lib/components';
 	import dove from '$lib/assets/images/dove.jpg?enhanced';
 </script>
+
+<SEO
+	title="Adonai Ministries International – Prayer & Word Ministry"
+	description="Adonai Ministries International exists to give ourselves continually to prayer and the ministry of the Word, sharing the Gospel across nations."
+	url="/"
+></SEO>
 
 <Hero img={dove} />
 

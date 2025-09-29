@@ -1,8 +1,14 @@
 <script>
-	import { Hero } from '$lib/components';
+	import { Hero, SEO } from '$lib/components';
 	import { praiseReportFormFields } from './data';
 	import praise from '$lib/assets/images/praise.jpg?enhanced';
 </script>
+
+<SEO
+	title="AMI | Praise reports"
+	description="Following are the Testimonies of the dear saints of God, which they have kindly shared to glorify our Lord and to encourage you. The Bible declares in Rev 12:11, ” They overcame him by the blood of the lamb and by the word of their testimony and they loved not their lives unto death”. Our God is the living God indeed. “Jesus Christ is the same yesterday, today and for ever”(Heb 13:8). “Faith comes by hearing and hearing by the Word of God”(Rom 10:17). What God has promised, He will also accomplish (Rom 4:21). Let not your heart be troubled neither let it be afraid (John 14:27). Believe in God and also in Christ Jesus (John 14:1). God Bless you."
+	url="/prayer/praise-reports"
+></SEO>
 
 <Hero title="Praise reports" img={praise} />
 

@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { enhance } from '$app/forms';
 	import { PUBLIC_MODE, PUBLIC_TURNSTILE_SITE_KEY } from '$env/static/public';
-	import { Hero, Toast } from '$lib/components';
+	import { Hero, Toast, SEO } from '$lib/components';
 	import { engagementFormFields, invitationFormFields } from './data';
 	import { Turnstile } from 'svelte-turnstile';
 	import invitations from '$lib/assets/images/invitations.jpg?enhanced';
@@ -68,6 +68,12 @@
 		};
 	};
 </script>
+
+<SEO
+	title="AMI | Invitations"
+	description="Thank you for your interest in the ministry of Bro.Selva Manuel. Please include your information and your request will be prayerfully considered and responded promptly."
+	url="/invitations"
+></SEO>
 
 <Hero title="Invitations" img={invitations} />
 

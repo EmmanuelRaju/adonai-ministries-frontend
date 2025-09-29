@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { enhance } from '$app/forms';
 	import { PUBLIC_MODE, PUBLIC_TURNSTILE_SITE_KEY } from '$env/static/public';
-	import { Hero, Toast } from '$lib/components';
+	import { Hero, Toast, SEO } from '$lib/components';
 	import { submitPraiseReportFields } from './data';
 	import { Turnstile } from 'svelte-turnstile';
 	import praise from '$lib/assets/images/praise.jpg?enhanced';
@@ -56,6 +56,12 @@
 		};
 	};
 </script>
+
+<SEO
+	title="AMI | Praise reports"
+	description="We thank you for taking time to share your praise report with us. We join with you in praising God as our Lord answered the prayer. May our Lord God’s Glorious Face continue to shine upon you and the Blessed Hand of our compassionate Father continue to engulf you.When we come to our God He heals us but when we come back to our Lord with thanksgiving, He makes us whole (Luke 17:17-19). Our Lord always loves people who are thankful to Him ."
+	url="/prayer/praise-reports/submit"
+></SEO>
 
 <Hero title="Share praise report" img={praise} />
 

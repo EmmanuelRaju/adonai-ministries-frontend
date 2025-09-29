@@ -1,5 +1,5 @@
 <script>
-	import { Hero } from '$lib/components';
+	import { Hero, SEO } from '$lib/components';
 	import statement from '$lib/assets/images/statement.jpg?enhanced';
 
 	const statements = [
@@ -17,6 +17,12 @@
 		'We believe in new heavens and a new earth which is prepared for the righteous (II Pet 3:13, Isa 65:17, Isa 66:22-23, Rev 21:22-23)'
 	];
 </script>
+
+<SEO
+	title="AMI | Statement of faith"
+	description="Adonai Ministries International - Statement of faith"
+	url="/about/statement-of-faith"
+></SEO>
 
 <Hero title="Statement of faith" img={statement} />
 

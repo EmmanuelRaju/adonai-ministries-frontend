@@ -1,7 +1,13 @@
 <script>
-	import { Hero } from '$lib/components';
+	import { Hero, SEO } from '$lib/components';
 	import terms from '$lib/assets/images/terms.jpg?enhanced';
 </script>
+
+<SEO
+	title="AMI | Terms of use"
+	description="We thank you for visiting “Adonai’s Ministries International” website. We have designed this website to be useful and informative. We hope you have an encouraging experience at our website. Please write to us if you would like to see improvements that would make it even easier for you to find information you need."
+	url="/terms-of-use"
+></SEO>
 
 <Hero title="Terms of use" img={terms} />
 

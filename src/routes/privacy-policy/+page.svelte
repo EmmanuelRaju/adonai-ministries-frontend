@@ -1,7 +1,13 @@
 <script>
-	import { Hero } from '$lib/components';
+	import { Hero, SEO } from '$lib/components';
 	import terms from '$lib/assets/images/terms.jpg?enhanced';
 </script>
+
+<SEO
+	title="AMI | Privacy policy"
+	description="Adonai’s Ministries International is committed to maintaining your trust and confidence. We want you to understand that following online privacy policy is intended to protect and secure the personal information you provide to our ministry online. The information you give us is essential to AMI to minister to you and will be treated with respect in accordance with this privacy policy. We also provide you with the opportunity to remove your name from our mailing list, if you desire to do so."
+	url="/privacy-policy"
+></SEO>
 
 <Hero title="Privacy policy" img={terms} />
 

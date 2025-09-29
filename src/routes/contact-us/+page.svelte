@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { enhance } from '$app/forms';
 	import { PUBLIC_MODE, PUBLIC_TURNSTILE_SITE_KEY } from '$env/static/public';
-	import { Hero, Toast } from '$lib/components';
+	import { Hero, Toast, SEO } from '$lib/components';
 	import { contactUsFormFields } from './data';
 	import { Turnstile } from 'svelte-turnstile';
 	import contact from '$lib/assets/images/contact.jpg?enhanced';
@@ -58,6 +58,12 @@
 		};
 	};
 </script>
+
+<SEO
+	title="AMI | Contact us"
+	description="If there are any spiritual questions or would like to know more about AMI, please contact us using the information below. We are looking forward to hear from you!"
+	url="/contact-us"
+></SEO>
 
 <Hero title="Contact us" img={contact} />
 

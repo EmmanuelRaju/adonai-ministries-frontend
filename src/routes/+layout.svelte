@@ -10,6 +10,19 @@
 
 <svelte:head>
 	<link rel="icon" href={favicon} />
+	<script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Church",
+      "name": "Adonai Ministries International",
+      "url": PUBLIC_BASE_URL,
+      "logo": PUBLIC_BASE_URL+"/logo.png",
+      "sameAs": [
+        "https://twitter.com/selva_manuel",
+        "https://www.youtube.com/selvamanuel","https://www.facebook.com/selva.manuel","https://www.instagram.com/pastorselvamanuel/"
+      ]
+    }
+	</script>
 </svelte:head>
 
 <Navbar navLinks={navlinks}></Navbar>

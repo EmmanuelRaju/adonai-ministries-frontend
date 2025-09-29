@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Blockquote, Hero } from '$lib/components';
+	import { Blockquote, Hero, SEO } from '$lib/components';
 	import salvation from '$lib/assets/images/salvation.jpg?enhanced';
 
 	const verses = [
@@ -21,6 +21,12 @@
 		}
 	];
 </script>
+
+<SEO
+	title="AMI | Miracle of salvation"
+	description="Our God is a GOD who saves. Verses from the Bible to help you receive your miracle."
+	url="/the-christ/miracle-of-salvation"
+></SEO>
 
 <Hero title="Miracle of salvation" img={salvation} />
 

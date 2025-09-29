@@ -1,7 +1,13 @@
 <script>
-	import { Hero, HeroBlockquote } from '$lib/components';
+	import { Hero, HeroBlockquote, SEO } from '$lib/components';
 	import oldman from '$lib/assets/images/oldman.jpg?enhanced';
 </script>
+
+<SEO
+	title="AMI | Selva Manuel"
+	description="Testimony of Selva Manuel of how he was saved from anaphylactic shock and how he is now a servant of the most high."
+	url="/about/selva-manuel"
+></SEO>
 
 <Hero title="A servant of the most high" img={oldman} />
 

@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { enhance } from '$app/forms';
 	import { PUBLIC_MODE, PUBLIC_TURNSTILE_SITE_KEY } from '$env/static/public';
-	import { Hero, Toast } from '$lib/components';
+	import { Hero, Toast, SEO } from '$lib/components';
 	import { prayerRequestFormFields } from './data';
 	import { Turnstile } from 'svelte-turnstile';
 	import prayer from '$lib/assets/images/prayer.jpg?enhanced';
@@ -56,6 +56,12 @@
 		};
 	};
 </script>
+
+<SEO
+	title="AMI | Prayer requests"
+	description="Our God is the prayer answering God. If you have a prayer request, We would love to pray with you. The Bible declares in Jer 33:3 ” Call unto me; I will answer you”. ” Cast your cares on the LORD and He will sustain you; He will never let the righteous fall.” (Psa 55:22). ”Abraham never wavered in believing God’s promise. In fact, his faith grew stronger, and in this he brought glory to God. He was absolutely convinced that God was able to do anything he promised. (Rom 4:20,21). The Bible declares in II Cor 1: 20, “All the promises of God in Him are Yes, and in Him Amen, to the glory of God through us.”"
+	url="/prayer/prayer-requests"
+></SEO>
 
 <Hero title="Prayer requests" img={prayer} />
 
