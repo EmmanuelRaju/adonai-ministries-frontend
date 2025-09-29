@@ -1,5 +1,6 @@
 <script>
 	import { Hero } from '$lib/components';
+	import statement from '$lib/assets/images/statement.jpg?enhanced';
 
 	const statements = [
 		'We believe the Bible (All scriptures) is eternal (Mark 13:31) and is given to mankind by the inspiration of the Sovereign Lord (II Tim 3:16) who cannot lie (Titus1:2) and the Bible convinces men of truth and leads to live a holy life (I Pet 1: 15,16) and is able to make one wise unto salvation through faith in Christ Jesus (II Tim 3: 15).',
@@ -17,7 +18,7 @@
 	];
 </script>
 
-<Hero title="Statement of faith" />
+<Hero title="Statement of faith" img={statement} />
 
 <section class="container-width mx-auto p-4 pt-8 md:text-justify">
 	<ol class="statement-of-faith">

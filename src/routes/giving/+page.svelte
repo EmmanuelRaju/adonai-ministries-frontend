@@ -1,8 +1,9 @@
 <script>
 	import { Hero, PayPalDonate } from '$lib/components';
+	import giving from '$lib/assets/images/giving.jpg?enhanced';
 </script>
 
-<Hero title="Giving" />
+<Hero title="Giving" img={giving} />
 
 <section class="container-width mx-auto p-4 pt-8 md:text-justify">
 	<p class="drop-cap">

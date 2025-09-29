@@ -1,8 +1,9 @@
 <script>
 	import { Blockquote, Hero } from '$lib/components';
+	import dove from '$lib/assets/images/dove.jpg?enhanced';
 </script>
 
-<Hero />
+<Hero img={dove} />
 
 <section class="container-width mx-auto p-4 md:text-justify">
 	<p class="drop-cap">

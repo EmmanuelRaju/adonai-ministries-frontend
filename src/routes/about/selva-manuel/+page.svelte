@@ -1,8 +1,9 @@
 <script>
 	import { Hero, HeroBlockquote } from '$lib/components';
+	import oldman from '$lib/assets/images/oldman.jpg?enhanced';
 </script>
 
-<Hero title="A servant of the most high" />
+<Hero title="A servant of the most high" img={oldman} />
 
 <section class="container-width mx-auto p-4 md:text-justify">
 	<section>

@@ -4,6 +4,7 @@
 	import { Hero, Toast } from '$lib/components';
 	import { submitPraiseReportFields } from './data';
 	import { Turnstile } from 'svelte-turnstile';
+	import praise from '$lib/assets/images/praise.jpg?enhanced';
 
 	let isSubmitting = $state(false);
 	let showCaptcha = $state(true);
@@ -56,7 +57,7 @@
 	};
 </script>
 
-<Hero title="Share praise report" />
+<Hero title="Share praise report" img={praise} />
 
 <section class="container-width mx-auto p-4 pt-8 md:text-justify">
 	<p class="drop-cap">

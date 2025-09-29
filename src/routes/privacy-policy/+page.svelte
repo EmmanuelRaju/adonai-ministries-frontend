@@ -1,8 +1,9 @@
 <script>
 	import { Hero } from '$lib/components';
+	import terms from '$lib/assets/images/terms.jpg?enhanced';
 </script>
 
-<Hero title="Privacy policy" />
+<Hero title="Privacy policy" img={terms} />
 
 <section class="container-width mx-auto p-4 pt-8 md:text-justify">
 	<section>

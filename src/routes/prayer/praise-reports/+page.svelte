@@ -1,9 +1,10 @@
 <script>
 	import { Hero } from '$lib/components';
 	import { praiseReportFormFields } from './data';
+	import praise from '$lib/assets/images/praise.jpg?enhanced';
 </script>
 
-<Hero title="Praise reports" />
+<Hero title="Praise reports" img={praise} />
 
 <section class="container-width mx-auto p-4 pt-8 md:text-justify">
 	<p class="drop-cap">

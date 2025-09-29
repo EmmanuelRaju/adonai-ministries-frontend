@@ -4,6 +4,7 @@
 	import { Hero, Toast } from '$lib/components';
 	import { engagementFormFields, invitationFormFields } from './data';
 	import { Turnstile } from 'svelte-turnstile';
+	import invitations from '$lib/assets/images/invitations.jpg?enhanced';
 
 	let isSubmitting = $state(false);
 	let showCaptcha = $state(true);
@@ -68,7 +69,7 @@
 	};
 </script>
 
-<Hero title="Invitations" />
+<Hero title="Invitations" img={invitations} />
 
 <section class="container-width mx-auto p-4 pt-8 md:text-justify">
 	<p class="drop-cap">

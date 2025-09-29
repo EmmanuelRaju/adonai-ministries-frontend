@@ -4,6 +4,7 @@
 	import { Hero, Toast } from '$lib/components';
 	import { prayerRequestFormFields } from './data';
 	import { Turnstile } from 'svelte-turnstile';
+	import prayer from '$lib/assets/images/prayer.jpg?enhanced';
 
 	let isSubmitting = $state(false);
 	let showCaptcha = $state(true);
@@ -56,7 +57,7 @@
 	};
 </script>
 
-<Hero title="Prayer requests" />
+<Hero title="Prayer requests" img={prayer} />
 
 <section class="container-width mx-auto p-4 pt-8 md:text-justify">
 	<p class="drop-cap">

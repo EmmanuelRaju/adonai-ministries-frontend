@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { Blockquote, Hero } from '$lib/components';
+	import salvation from '$lib/assets/images/salvation.jpg?enhanced';
 
 	const verses = [
 		{
@@ -21,7 +22,7 @@
 	];
 </script>
 
-<Hero title="Miracle of salvation" />
+<Hero title="Miracle of salvation" img={salvation} />
 
 <section class="container-width mx-auto p-4 md:text-justify">
 	<p class="drop-cap">

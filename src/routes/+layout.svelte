@@ -1,6 +1,6 @@
 <script lang="ts">
 	import '../app.css';
-	import favicon from '$lib/assets/favicon.svg?enhanced';
+	import favicon from '$lib/assets/favicon.svg';
 	import { navlinks } from '$lib/data/navbar';
 	import { Navbar, Footer, ThemeSetter } from '$lib/components';
 	import ScrollToTop from '$lib/components/layout/ScrollToTop.svelte';

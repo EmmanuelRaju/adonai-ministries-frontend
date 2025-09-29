@@ -4,6 +4,7 @@
 	import { Hero, Toast } from '$lib/components';
 	import { contactUsFormFields } from './data';
 	import { Turnstile } from 'svelte-turnstile';
+	import contact from '$lib/assets/images/contact.jpg?enhanced';
 
 	let isSubmitting = $state(false);
 	let showCaptcha = $state(true);
@@ -58,7 +59,7 @@
 	};
 </script>
 
-<Hero title="Contact us" />
+<Hero title="Contact us" img={contact} />
 
 <section class="container-width mx-auto p-4 pt-8 md:text-justify">
 	<p class="drop-cap">

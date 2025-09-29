@@ -1,5 +1,6 @@
 <script>
 	import { Hero } from '$lib/components';
+	import events from '$lib/assets/images/events.jpg?enhanced';
 
 	const statements = [
 		'Love of the Compassionate Father',
@@ -11,7 +12,7 @@
 	];
 </script>
 
-<Hero title="Events" />
+<Hero title="Events" img={events} />
 
 <section class="container-width mx-auto p-4 pt-8 md:text-justify">
 	<p class="drop-cap">
