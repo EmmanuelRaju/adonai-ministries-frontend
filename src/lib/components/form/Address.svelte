@@ -38,7 +38,7 @@
 			validatorHint: 'Cannot be empty',
 			props: {
 				name: `${label.toLowerCase().replace(/\s+/g, '_')}_street_line_2`,
-				required: required,
+				required: false,
 				title: 'Only letters',
 				maxlength: 30,
 				minlength: 1

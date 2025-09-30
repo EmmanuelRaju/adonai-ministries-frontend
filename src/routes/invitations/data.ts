@@ -28,13 +28,23 @@ export const invitationFormFields = [
 		}
 	},
 	{
+		type: 'email',
+		component: Input,
+		label: 'Email',
+		placeholder: 'mail@site.com',
+		validatorHint: 'Enter valid email address',
+		props: {
+			required: true
+		}
+	},
+	{
 		type: 'text',
 		component: Input,
 		label: 'Admin/Exec assitant',
 		placeholder: '',
 		validatorHint: 'Cannot be empty',
 		props: {
-			required: true,
+			required: false,
 			title: 'Only letters',
 			maxlength: 30,
 			minlength: 1
@@ -59,7 +69,7 @@ export const invitationFormFields = [
 		placeholder: '',
 		validatorHint: 'Cannot be empty',
 		props: {
-			required: true,
+			required: false,
 			title: 'Only letters',
 			maxlength: 30,
 			minlength: 1
@@ -67,7 +77,10 @@ export const invitationFormFields = [
 	},
 	{
 		component: Address,
-		label: 'Ministry address'
+		label: 'Ministry address',
+		props: {
+			required: true
+		}
 	}
 ];
 
@@ -92,7 +105,7 @@ export const engagementFormFields = [
 		placeholder: 'Eg: 23',
 		validatorHint: 'Required',
 		props: {
-			required: true,
+			required: false,
 			title: 'Only letters',
 			maxlength: 30,
 			minlength: 1
@@ -100,6 +113,9 @@ export const engagementFormFields = [
 	},
 	{
 		component: Address,
-		label: 'Venue address'
+		label: 'Venue address',
+		props: {
+			required: false
+		}
 	}
 ];

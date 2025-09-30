@@ -97,7 +97,6 @@
 				class="file-input"
 				name="formal_letter"
 				accept=".doc,.docx,.pdf"
-				required
 				disabled={isSubmitting}
 			/>
 			<small class="text-gray-500">Maximum file size: 5MB</small>

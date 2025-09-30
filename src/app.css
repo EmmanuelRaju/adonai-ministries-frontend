@@ -101,14 +101,14 @@
 	}
 
 	/* Optional smooth card appearance */
-	.card-container {
+	.reveal-on-scroll--container {
 		opacity: 0;
 		transform: translateY(20px);
 		transition:
 			opacity 0.4s ease,
 			transform 0.4s ease;
 	}
-	.card-container.visible {
+	.reveal-on-scroll--container.visible {
 		opacity: 1;
 		transform: translateY(0);
 	}

@@ -19,6 +19,11 @@ export const navlinks: TNavLink[] = [
 				id: 'faith-statement',
 				label: 'Statement Of Faith',
 				href: '/about/statement-of-faith'
+			},
+			{
+				id: 'declarations',
+				label: 'Declarations',
+				href: '/about/declarations'
 			}
 		]
 	},

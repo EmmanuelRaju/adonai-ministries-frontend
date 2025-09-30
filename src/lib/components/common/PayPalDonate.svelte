@@ -7,6 +7,20 @@
 	let paypalButtonsInstance: any;
 	let showCustomAmountInput = false;
 
+	let _reRenderTimer: ReturnType<typeof setTimeout> | null = null;
+	function scheduleRender() {
+		// only render when amount is a positive number
+		if (!amount || isNaN(Number(amount)) || Number(amount) <= 0) return;
+		if (_reRenderTimer) clearTimeout(_reRenderTimer);
+		_reRenderTimer = setTimeout(() => {
+			try {
+				renderPayPalButtons();
+			} finally {
+				_reRenderTimer = null;
+			}
+		}, 300);
+	}
+
 	function loadPayPalScript(clientId: string): Promise<void> {
 		return new Promise((resolve, reject) => {
 			if (document.getElementById('paypal-sdk')) {
@@ -36,10 +50,11 @@
 				},
 				// Setup order
 				createOrder: (_data, actions) => {
+					const normalized = Number(amount) ? Number(amount).toFixed(2) : '0.00';
 					return actions.order.create({
 						purchase_units: [
 							{
-								amount: { value: amount }
+								amount: { value: normalized }
 							}
 						]
 					});
@@ -87,6 +102,7 @@
 				on:click={() => {
 					amount = _amount;
 					showCustomAmountInput = false;
+					scheduleRender();
 				}}
 				class:btn-primary={amount === _amount && !showCustomAmountInput}>${_amount}</button
 			>
@@ -114,7 +130,8 @@
 					if (amount === '' || parseFloat(amount) <= 0) {
 						amount = '';
 					} else {
-						amount = parseFloat(amount).toFixed(2);
+						amount = parseFloat(String(amount)).toFixed(2);
+						scheduleRender();
 					}
 				}}
 				class="input-bordered input"

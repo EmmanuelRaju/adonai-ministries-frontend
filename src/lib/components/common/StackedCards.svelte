@@ -29,7 +29,7 @@
 	{#each data as item, i (i)}
 		<div
 			use:revealOnScroll
-			class="card-container relative"
+			class="reveal-on-scroll--container relative"
 			in:fly={{ y: 20, duration: 400, delay: i * 120 }}
 		>
 			<div

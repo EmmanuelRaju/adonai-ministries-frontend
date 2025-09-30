@@ -1,7 +1,7 @@
 <script>
-	import { Hero, SEO } from '$lib/components';
-	import { praiseReportFormFields } from './data';
+	import { Hero, SEO, Blockquote } from '$lib/components';
 	import praise from '$lib/assets/images/praise.jpg?enhanced';
+	import { praiseReports } from './data';
 </script>
 
 <SEO
@@ -35,22 +35,14 @@
 		has promised, He will also accomplish (Rom 4:21). Let not your heart be troubled neither let it
 		be afraid (John 14:27). Believe in God and also in Christ Jesus (John 14:1). God Bless you.
 	</p>
-
-	<!-- <section class="mt-8">
-		<h2 class="text-center">Share Your Testimony</h2>
-		<form class="mx-auto flex flex-col gap-3 md:w-80">
-			{#each praiseReportFormFields as field, i (i)}
-				<field.component
-					type={field.type}
-					label={field.label}
-					class="validator input input-md"
-					placeholder={field.placeholder}
-					validatorHint={field.validatorHint}
-					options={field.options ?? []}
-					{...field.props}
-				></field.component>
-			{/each}
-			<button class="btn mt-2" type="submit">Submit testimony</button>
-		</form>
-	</section> -->
+	<div class="flex flex-col gap-5">
+		{#each praiseReports as it, i (i)}
+			<Blockquote
+				isCiteFirst={true}
+				quote={it.description}
+				cite={it.title}
+				dir={i % 2 == 0 ? 'left' : 'right'}
+			></Blockquote>
+		{/each}
+	</div>
 </section>
