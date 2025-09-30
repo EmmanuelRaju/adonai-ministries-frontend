@@ -97,7 +97,7 @@
 	<div class="flex flex-wrap gap-5">
 		{#each donationAmounts as _amount (_amount)}
 			<button
-				class="btn"
+				class="btn min-w-[90px]"
 				type="button"
 				on:click={() => {
 					amount = _amount;
@@ -108,7 +108,7 @@
 			>
 		{/each}
 		<button
-			class="btn"
+			class="btn min-w-[90px]"
 			type="button"
 			on:click={() => {
 				showCustomAmountInput = true;
@@ -139,5 +139,5 @@
 		</div>
 	{/if}
 
-	<div id="paypal-donate-button" class="mt-6"></div>
+	<div id="paypal-donate-button" class="mx-auto mt-6 w-full max-w-2xl"></div>
 </section>
