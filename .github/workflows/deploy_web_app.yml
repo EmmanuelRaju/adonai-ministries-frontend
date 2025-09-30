@@ -27,6 +27,7 @@ jobs:
           TO_EMAIL: ${{secrets.TO_EMAIL}}
           PUBLIC_PAYPAL_CLIENT_ID: ${{secrets.PUBLIC_PAYPAL_CLIENT_ID}}
           PUBLIC_BASE_URL: ${{secrets.PUBLIC_BASE_URL}}
+          PUBLIC_FROM_EMAIL_DOMAIN: ${{secrets.PUBLIC_FROM_EMAIL_DOMAIN}}
         run: |
           npm install
           CLOUDFLARE_DEPLOY=1 npm run build

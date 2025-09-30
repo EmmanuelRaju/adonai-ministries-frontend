@@ -1,6 +1,7 @@
 <script>
 	import { Hero, SEO } from '$lib/components';
 	import declaration from '$lib/assets/images/declaration.jpg?enhanced';
+	import { revealOnScroll } from '$lib/utils/common';
 
 	const statements = [
 		'With God nothing is ever impossible and no word from God shall be without power or impossible of fulfillment. (Luke 1:37)',
@@ -30,7 +31,9 @@
 <section class="container-width mx-auto p-4 pt-8 md:text-justify">
 	<ol class="statement-of-faith">
 		{#each statements as statement, i (i)}
-			<li class="relative pb-10 pl-5 lg:pl-10">{statement}</li>
+			<li use:revealOnScroll class="reveal-on-scroll--container relative pb-10 pl-5 lg:pl-10">
+				{statement}
+			</li>
 		{/each}
 	</ol>
 </section>

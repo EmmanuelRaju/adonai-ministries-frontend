@@ -1,5 +1,6 @@
 import { Resend } from 'resend';
 import { RESEND_API_KEY, TO_EMAIL } from '$env/static/private';
+import { PUBLIC_FROM_EMAIL_DOMAIN } from '$env/static/public';
 
 const resend = new Resend(RESEND_API_KEY);
 
@@ -103,7 +104,7 @@ const handleEmailSubmission = async (
 export const contactUs = (formData: FormData) =>
 	handleEmailSubmission(formData, {
 		formTitle: 'Contact Form',
-		fromEmail: 'contact@selvamanuel.com',
+		fromEmail: `contact@${PUBLIC_FROM_EMAIL_DOMAIN}`,
 		fromName: 'AMI Contact Form',
 		subjectPrefix: 'New Contact Form Submission'
 	});
@@ -111,7 +112,7 @@ export const contactUs = (formData: FormData) =>
 export const submitPrayerRequest = (formData: FormData) =>
 	handleEmailSubmission(formData, {
 		formTitle: 'Prayer Request',
-		fromEmail: 'prayer@selvamanuel.com',
+		fromEmail: `prayer@${PUBLIC_FROM_EMAIL_DOMAIN}`,
 		fromName: 'AMI Prayer Request',
 		subjectPrefix: 'New Prayer Request'
 	});
@@ -119,7 +120,7 @@ export const submitPrayerRequest = (formData: FormData) =>
 export const submitPraiseReport = (formData: FormData) =>
 	handleEmailSubmission(formData, {
 		formTitle: 'Praise Report',
-		fromEmail: 'praise@selvamanuel.com',
+		fromEmail: `praise@${PUBLIC_FROM_EMAIL_DOMAIN}`,
 		fromName: 'AMI Praise Report',
 		subjectPrefix: 'New Praise Report'
 	});
@@ -127,7 +128,7 @@ export const submitPraiseReport = (formData: FormData) =>
 export const submitInvitation = (formData: FormData) =>
 	handleEmailSubmission(formData, {
 		formTitle: 'Invitation Request',
-		fromEmail: 'invitations@selvamanuel.com',
+		fromEmail: `invitations@${PUBLIC_FROM_EMAIL_DOMAIN}`,
 		fromName: 'AMI Invitation Request',
 		subjectPrefix: 'New Invitation Request',
 		includeAttachments: true

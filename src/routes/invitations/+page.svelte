@@ -57,6 +57,7 @@
 
 		return async ({ result }: { result: { type: string; data?: { message?: string } } }) => {
 			if (result.type === 'failure') {
+				console.error(result);
 				submissionStatus = 'error';
 				submissionMessage = result.data?.message || 'An error occurred. Please try again.';
 			} else if (result.type === 'success') {

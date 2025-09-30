@@ -1,6 +1,7 @@
 <script>
 	import { Hero, SEO } from '$lib/components';
 	import statement from '$lib/assets/images/statement.jpg?enhanced';
+	import { revealOnScroll } from '$lib/utils/common';
 
 	const statements = [
 		'We believe the Bible (All scriptures) is eternal (Mark 13:31) and is given to mankind by the inspiration of the Sovereign Lord (II Tim 3:16) who cannot lie (Titus1:2) and the Bible convinces men of truth and leads to live a holy life (I Pet 1: 15,16) and is able to make one wise unto salvation through faith in Christ Jesus (II Tim 3: 15).',
@@ -29,7 +30,9 @@
 <section class="container-width mx-auto p-4 pt-8 md:text-justify">
 	<ol class="statement-of-faith">
 		{#each statements as statement, i (i)}
-			<li class="relative pb-10 pl-5 lg:pl-10">{statement}</li>
+			<li use:revealOnScroll class="reveal-on-scroll--container relative pb-10 pl-5 lg:pl-10">
+				{statement}
+			</li>
 		{/each}
 	</ol>
 </section>

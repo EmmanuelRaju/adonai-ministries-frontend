@@ -28,7 +28,7 @@
 		<Quote fill="var(--color-primary)"></Quote>
 	</div>
 	{#if isCiteFirst}
-		<p class="text-primary capitalize {dir === 'right' ? 'text-right' : 'text-left'}">{cite}</p>
+		<p class="text-primary {dir === 'right' ? 'text-right' : 'text-left'}">{cite}</p>
 		<p class="md:text-justify">{@html quote}</p>
 		<!-- <p class={dir === 'right' ? 'text-right' : 'text-left'}>{@html quote}</p> -->
 	{:else}

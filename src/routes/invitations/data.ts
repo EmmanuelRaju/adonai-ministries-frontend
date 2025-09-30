@@ -40,7 +40,7 @@ export const invitationFormFields = [
 	{
 		type: 'text',
 		component: Input,
-		label: 'Admin/Exec assitant',
+		label: 'Admin/Exec assistant',
 		placeholder: '',
 		validatorHint: 'Cannot be empty',
 		props: {
