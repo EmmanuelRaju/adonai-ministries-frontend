@@ -51,7 +51,13 @@ const handleEmailSubmission = async (
 			const file = formData.get('formal_letter');
 			if (file && file instanceof File && file.size > 0) {
 				const arrayBuffer = await file.arrayBuffer();
-				const base64 = Buffer.from(arrayBuffer).toString('base64');
+				const uint8Array = new Uint8Array(arrayBuffer);
+
+				let binary = '';
+				for (let i = 0; i < uint8Array.length; i++) {
+					binary += String.fromCharCode(uint8Array[i]);
+				}
+				const base64 = btoa(binary);
 
 				attachments.push({
 					content: base64,
@@ -72,6 +78,8 @@ const handleEmailSubmission = async (
 			replyTo: data.email?.toString(),
 			attachments: attachments.length > 0 ? attachments : undefined
 		});
+
+		// console.log('response', response);
 
 		if (response.error == null) {
 			return {
