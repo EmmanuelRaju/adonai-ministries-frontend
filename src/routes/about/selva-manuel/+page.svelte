@@ -1,6 +1,6 @@
 <script>
 	import { Hero, HeroBlockquote, SEO } from '$lib/components';
-	import oldman from '$lib/assets/images/oldman.jpg?enhanced';
+	import selva from '$lib/assets/images/selva.jpeg?enhanced';
 </script>
 
 <SEO
@@ -9,7 +9,7 @@
 	url="/about/selva-manuel"
 ></SEO>
 
-<Hero title="A servant of the most high" img={oldman} />
+<Hero title="A servant of the most high" img={selva} />
 
 <section class="container-width mx-auto p-4 md:text-justify">
 	<section>
