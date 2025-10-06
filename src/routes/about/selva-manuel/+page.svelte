@@ -9,7 +9,7 @@
 	url="/about/selva-manuel"
 ></SEO>
 
-<Hero title="A servant of the most high" img={selva} />
+<Hero title="A servant of the most high" img={selva} classes={{ text: ' mt-[200px] lg:mt-60' }} />
 
 <section class="container-width mx-auto p-4 md:text-justify">
 	<section>

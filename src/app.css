@@ -34,6 +34,17 @@
 	--font-weight-normal: 500;
 	--font-weight-semibold: 600;
 	--font-weight-bold: 700;
+
+	--animate-text-clock: text-clock var(--duration, 25s) infinite linear;
+	@keyframes text-clock {
+		0% {
+			transform: rotate(0deg) translateY(var(--radius, 100px)) rotate(0deg);
+			visibility: visible;
+		}
+		100% {
+			transform: rotate(360deg) translateY(var(--radius, 100px)) rotate(-360deg);
+		}
+	}
 }
 
 @layer base {

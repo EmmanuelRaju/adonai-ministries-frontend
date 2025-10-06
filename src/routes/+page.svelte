@@ -1,6 +1,18 @@
 <script>
-	import { Blockquote, Hero, SEO } from '$lib/components';
-	import dove from '$lib/assets/images/dove.jpg?enhanced';
+	import { Blockquote, SEO } from '$lib/components';
+	import logo from '$lib/assets/logo-cropped.png?enhanced';
+	import sky from '$lib/assets/images/sky.jpg?enhanced';
+
+	const heroWords = [
+		'word of god',
+		'salvation',
+		'presence of god',
+		'healing',
+		'power of god',
+		'miracles'
+	];
+
+	const animationDuration = 25;
 </script>
 
 <SEO
@@ -9,7 +21,42 @@
 	url="/"
 ></SEO>
 
-<Hero img={dove} />
+<!-- <Hero img={dove} /> -->
+
+<section
+	class="relative hero min-h-[70vh] overflow-clip bg-base-200"
+	style="--duration:{animationDuration}s;--radius:130px"
+>
+	<enhanced:img
+		src={sky}
+		alt="Hero background"
+		class="absolute inset-0 h-full w-full object-cover"
+	/>
+	<div class="bg-opacity-30 z-[1] hero-overlay"></div>
+	<enhanced:img
+		src={logo}
+		alt="Logo"
+		class="absolute top-1/3 left-1/2 z-[1] w-[150px] -translate-x-1/2 -translate-y-1/3"
+	/>
+
+	<div class="relative -bottom-40 hero-content z-[2] text-center">
+		<h1 class="container-width font-semibold text-white">Adonai's Ministries International</h1>
+	</div>
+	{#each heroWords as word, i (word)}
+		<p
+			class="invisible absolute top-[30%] z-[1] animate-text-clock text-center text-xs text-white uppercase"
+			style="animation-delay:{(animationDuration / heroWords.length) * i}s"
+		>
+			{word}
+		</p>
+		<!-- <p
+			class="invisible absolute top-1/2 left-1/2 z-[2] -translate-x-1/2 -translate-y-1/2 animate-text-clock text-center text-white uppercase"
+			style="animation-delay:{(animationDuration / heroWords.length) * i}s"
+		>
+			{word}
+		</p> -->
+	{/each}
+</section>
 
 <section class="container-width mx-auto p-4 md:text-justify">
 	<p class="drop-cap">
