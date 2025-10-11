@@ -1,6 +1,7 @@
 <script>
 	import { Blockquote, SEO } from '$lib/components';
-	import logo from '$lib/assets/logo-cropped.png?enhanced';
+	// import logo from '$lib/assets/logo-cropped.png?enhanced';
+	import logo from '$lib/assets/image.png?enhanced';
 	import sky from '$lib/assets/images/sky.jpg?enhanced';
 
 	const heroWords = [
@@ -36,7 +37,7 @@
 	<enhanced:img
 		src={logo}
 		alt="Logo"
-		class="absolute top-1/3 left-1/2 z-[1] w-[150px] -translate-x-1/2 -translate-y-1/3"
+		class="absolute top-1/3 left-1/2 z-[2] w-[150px] -translate-x-1/2 -translate-y-1/3"
 	/>
 
 	<div class="relative -bottom-40 hero-content z-[2] text-center">
