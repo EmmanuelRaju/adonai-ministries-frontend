@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { Hero, Blockquote, SEO } from '$lib/components';
+	import miraculousWord from '$lib/assets/images/miraculous-word.jpg?enhanced';
 
 	const verses = [
 		{
@@ -190,7 +191,7 @@
 	url="/the-christ/miraculous-word"
 ></SEO>
 
-<Hero title="Miraculous word" />
+<Hero title="Miraculous word" img={miraculousWord} />
 
 <section class="container-width mx-auto p-4 md:text-justify">
 	<p class="drop-cap">

@@ -1,6 +1,6 @@
 <script>
 	import { Hero, HeroBlockquote, SEO } from '$lib/components';
-	import selva from '$lib/assets/images/selva_1.jpg?enhanced';
+	import selva from '$lib/assets/images/selva.jpg?enhanced';
 </script>
 
 <SEO
